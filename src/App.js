@@ -7,10 +7,10 @@ import { Provider } from "react-redux";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <RootPage />,
+    element: <div />,
     children: [
-      { index: true, element: <StatutePage /> },
-      { path: "/tabs", element: <TabsPage /> },
+      { index: true, element: <div /> },
+      { path: "/tabs", element: <div /> },
     ],
   },
 ]);
