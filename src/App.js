@@ -1,8 +1,4 @@
-import { Route, RouterProvider, createBrowserRouter } from "react-router-dom";
-import RootPage from "./pages/RootPage";
-import StatutePage from "./pages/StatutePage";
-import TabsPage from "./pages/TabsPage";
-import { Provider } from "react-redux";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
