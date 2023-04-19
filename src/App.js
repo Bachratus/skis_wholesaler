@@ -1,12 +1,12 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import RootPage from "./pages/RootPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div />,
+    element: <RootPage />,
     children: [
       { index: true, element: <div /> },
-      { path: "/tabs", element: <div /> },
     ],
   },
 ]);
