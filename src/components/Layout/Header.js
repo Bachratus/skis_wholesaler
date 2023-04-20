@@ -1,17 +1,20 @@
+import CartIcon from "../Cart/CartIcon";
 import classes from "./Header.module.css";
-
+import HeaderCartButton from "./HeaderCartButton";
 const Header = () => {
   return (
     <>
       <header className={classes.header}>
-        <div className={classes.logo}>LOGO</div>
+        <div className={classes.logo}>
+          <p>Skis wholesaler</p>
+        </div>
         <div className={classes.navigation}>
           <div>Contact</div>
           <div>About us</div>
           <div>Store</div>
         </div>
         <div className={classes.cart}>
-          <div><p>cart button</p></div>
+          <HeaderCartButton/>
         </div>
       </header>
     </>

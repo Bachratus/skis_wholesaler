@@ -1,28 +1,33 @@
 .header{
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: rgb(141, 141, 162);
     width: 100%;
-    max-width: 1200px;
+    max-width: 1560px;
     margin: 0 auto;
     height: 8vh;
+    min-width: 770px;
 }
 
 .logo{
-    background-color: yellow;
-    width: 20%;
+    width: 25%;
+}
+.logo p{
+    color: white;
+    line-height: 8vh;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .navigation{
     width: 50%;
-    background-color: pink;
     justify-content: space-around;
     display: flex;
 }
 
 .navigation div{
-    background-color: blueviolet;
-    line-height: 7vh;
+    line-height: 8vh;
     text-align: center;
     width: 25%;
     color: white;
@@ -31,19 +36,7 @@
 }
 
 .cart{
-    background-color: magenta;
     width: 20%;
 }
 
-.cart div{
-    height: 100%;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.cart div p{
-    display: block;
-    line-height: 8vh;
-    text-align: center;
-}
 
