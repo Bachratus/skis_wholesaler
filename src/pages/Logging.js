@@ -6,7 +6,6 @@ const LoggingPage = () => {
   const isLoggedIn = useLoaderData();
   const navigate = useNavigate();
   useEffect(() => {
-    console.log(isLoggedIn);
     if (isLoggedIn) navigate("/home");
   }, [isLoggedIn, navigate]);
 

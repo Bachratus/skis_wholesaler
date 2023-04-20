@@ -6,7 +6,6 @@ const AppRoot = () => {
   const isLoggedIn = useLoaderData();
   const navigate = useNavigate();
   useEffect(()=>{
-    console.log(isLoggedIn)
     if(!isLoggedIn) navigate('/')
   },[isLoggedIn,navigate])
 
