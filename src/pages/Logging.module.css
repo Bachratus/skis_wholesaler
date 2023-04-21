@@ -119,7 +119,13 @@ p.invalid{
     color: red;
     background-color: transparent;
 }
-
+button.invalid{
+    background-color: rgb(152, 152, 152);
+    cursor:not-allowed;
+}
+button.invalid:hover{
+    background-color: rgb(152, 152, 152);
+}
 @media only screen and (max-height: 800px){
     .icon{
         height:calc(0.2 * var(--containerHeight)) ;

@@ -86,7 +86,7 @@ const LoggingPage = () => {
               {!isPasswordInputValid && <p className={classes.invalid}>Please enter valid password!</p>}
             </div>
             <div className={classes.button}>
-              <button type="submit">Continue</button>
+              <button className={formIsValid ? '' : classes.invalid} type="submit">Continue</button>
             </div>
           </form>
         </div>
