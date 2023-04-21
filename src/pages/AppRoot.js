@@ -28,7 +28,6 @@ const AppRoot = () => {
 
   return (
     <>
-      <div>{isLoggedIn.toString()}</div>
       <Header logoutHander={onLogoutHandler}/>
       <main>
         <Outlet />

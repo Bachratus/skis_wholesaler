@@ -47,6 +47,21 @@
     display: none;
 }
 
+.logout{
+    width: 5%;
+    text-align: center;
+}
+
+.logout button{
+    margin-top: 1.5vh;
+    background-color: rgba(45, 126, 197, 0.711);
+}
+
+.logout svg{
+    width: 1.5rem;
+    height: 4vh;
+}
+
 @media only screen and (max-width:924px){
     .logo p:first-child{
         display:none

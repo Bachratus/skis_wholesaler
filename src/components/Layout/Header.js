@@ -1,5 +1,6 @@
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
+import LogoutIcon from '../Icons/LogoutIcon'
 
 const Header = (props) => {
   return (
@@ -18,7 +19,7 @@ const Header = (props) => {
           <HeaderCartButton/>
         </div>
         <div className={classes.logout}>
-          <button onClick={props.logoutHander}>Logout</button>
+          <button onClick={props.logoutHander}><LogoutIcon/></button>
         </div>
       </header>
     </>
