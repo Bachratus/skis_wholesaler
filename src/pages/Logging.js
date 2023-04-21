@@ -29,6 +29,10 @@ const LoggingPage = () => {
       setError(error.message);
     }
   };
+  const submitHandler = event => {
+    event.preventDefault();
+    logInHandler()
+  }
 
   return (
     <>
@@ -42,7 +46,7 @@ const LoggingPage = () => {
           </div>
         </div>
         <div className={classes.form}>
-          <form>
+          <form onSubmit={submitHandler}>
             <div className={classes.formItem}>
               <label>Login</label>
               <input></input>
@@ -52,15 +56,12 @@ const LoggingPage = () => {
               <input></input>
             </div>
             <div className={classes.button}>
-              <button>Continue</button>
+              <button type="submit">Continue</button>
             </div>
           </form>
         </div>
       </div>
-
-      <p>Logging page</p>
       {error && <p>{error.message}</p>}
-      <button onClick={logInHandler}>log in</button>
     </>
   );
 };

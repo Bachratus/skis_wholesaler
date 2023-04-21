@@ -106,7 +106,12 @@ padding: 1rem;
         --containerWidth: 350px;
     }
 }
-@media only screen and (max-height:740px){
+@media only screen and (max-height: 700px){
+    :root{
+        --containerHeight: 600px;
+    }
+}
+@media only screen and (max-height:740px) and (max-width:530px){
     :root{
         --containerHeight: 500px;
     }
