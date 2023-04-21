@@ -29,6 +29,7 @@ const AppRoot = () => {
   return (
     <>
       <Header logoutHander={onLogoutHandler}/>
+      {error && <p>{error.message}</p>}
       <main>
         <Outlet />
       </main>

@@ -3,16 +3,30 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { json } from "react-router-dom";
 import classes from "./Logging.module.css";
 import profilePng from "../components/Icons/profilePng.png";
+import useInput from "../hooks/use-input";
 
 const LoggingPage = () => {
-  const [error, setError] = useState(null);
+  const {
+    enteredValue: enteredLogin,
+    isValueValid: isLoginValid,
+    isInputValid: isLoginInputValid,
+    onChangeHandler: loginChangeHandler,
+    onBlurHandler: loginInputBlurHandler,
+  } = useInput((value) => value.trim().length > 7);
+  const {
+    enteredValue: enteredPassword,
+    isValueValid: isPasswordValid,
+    isInputValid: isPasswordInputValid,
+    onChangeHandler: passwordChangeHandler,
+    onBlurHandler: passwordInputBlurHandler,
+  } = useInput((value) => value.trim().length > 7);
 
+  const [error, setError] = useState(null);
   const isLoggedIn = useLoaderData();
   const navigate = useNavigate();
   useEffect(() => {
     if (isLoggedIn) navigate("/home");
   }, [isLoggedIn, navigate]);
-
   const logInHandler = async () => {
     setError(null);
     try {
@@ -26,14 +40,18 @@ const LoggingPage = () => {
       if (!response.ok) throw new Error("Something went wrong");
       navigate("/home");
     } catch (error) {
-      setError(error.message);
+      setError({ message: error.message });
     }
   };
-  const submitHandler = event => {
-    event.preventDefault();
-    logInHandler()
-  }
 
+  let formIsValid=false;
+  if(isLoginValid && isPasswordValid) formIsValid=true;
+  const submitHandler = (event) => {
+    event.preventDefault();
+    if(!formIsValid) return;
+
+    logInHandler();
+  };
   return (
     <>
       <div className={classes.container}>
@@ -49,11 +67,23 @@ const LoggingPage = () => {
           <form onSubmit={submitHandler}>
             <div className={classes.formItem}>
               <label>Login</label>
-              <input></input>
+              <input
+                className={isLoginInputValid ? "" : classes.invalid}
+                onChange={loginChangeHandler}
+                value={enteredLogin}
+                onBlur={loginInputBlurHandler}
+              />
+              {!isLoginInputValid && <p className={classes.invalid}>Please enter valid login!</p>}
             </div>
             <div className={classes.formItem}>
               <label>Password</label>
-              <input></input>
+              <input
+                className={isPasswordInputValid ? "" : classes.invalid}
+                onChange={passwordChangeHandler}
+                value={enteredPassword}
+                onBlur={passwordInputBlurHandler}
+              />
+              {!isPasswordInputValid && <p className={classes.invalid}>Please enter valid password!</p>}
             </div>
             <div className={classes.button}>
               <button type="submit">Continue</button>
@@ -61,7 +91,7 @@ const LoggingPage = () => {
           </form>
         </div>
       </div>
-      {error && <p>{error.message}</p>}
+      {error && <p className={classes.error}>{error.message}</p>}
     </>
   );
 };

@@ -1,8 +1,10 @@
 :root{
-    --containerHeight: 650px;
-    --containerWidth: 600px;
+    --containerHeight: 70vh;
+    --containerWidth: 30vw;
 }
 .container{
+    min-width: 260px;
+    min-height: 350px;
     position: absolute;
     border-radius: 25px;
     top: calc(50vh - var(--containerHeight) / 2 );
@@ -29,21 +31,25 @@
 .icon{
     display: flex;
     flex-direction: column;
-    height:calc(0.25 * var(--containerHeight)) ;
+    height:calc(0.21 * var(--containerHeight)) ;
     justify-content: space-around;
 }
 
 .iconBackground{
     background-color: rgb(60, 110, 203);
-    margin-left: calc(50% - 50px);
-    width:fit-content;
-    border-radius: 50px;
+    margin-left: calc(50% - 6vh);
+    width:12vh;
+    height:12vh;
+    border-radius: 6vh;
     padding: .1rem;
+    position: relative;
 }
 .iconBackground img{
-    display: block;
-    height: 100px;
-    width: 100px;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top:1.2vh;
+    left: 1.2vh;
 }
 
 .form{
@@ -56,7 +62,7 @@
     flex-grow: 0.5;
 }
 .formItem{
-padding: 1rem;
+    padding: 1rem;
 }
 
 .formItem label{
@@ -67,7 +73,7 @@ padding: 1rem;
 
 .formItem input{
     display: block;
-    height: 3rem;
+    height: 2.5rem;
     width: 100%;
     border-radius: 20px;
     border: 2px solid rgb(60, 110, 203);
@@ -78,6 +84,14 @@ padding: 1rem;
 
 .button{
     text-align: right;
+}
+.error{
+    background-color: red;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
 }
 
 .form button{
@@ -96,33 +110,41 @@ padding: 1rem;
     background-color: #0d4cc2;
 }
 
-@media only screen and (max-width:700px){
-    :root{
-        --containerWidth: 500px;
-    }
+input.invalid{
+    background-color: rgb(244, 201, 201);
+    border-color: red;
 }
-@media only screen and (max-width:530px){
-    :root{
-        --containerWidth: 350px;
-    }
+
+p.invalid{
+    color: red;
+    background-color: transparent;
 }
-@media only screen and (max-height: 700px){
-    :root{
-        --containerHeight: 600px;
-    }
-}
-@media only screen and (max-height:740px) and (max-width:530px){
-    :root{
-        --containerHeight: 500px;
-    }
-    .formItem input{
-        height: 2rem;
-        font-size: 1rem;
+
+@media only screen and (max-height: 800px){
+    .icon{
+        height:calc(0.2 * var(--containerHeight)) ;
     }
     .formItem label{
         font-size: 1rem;
     }
-    .form button{
+    .formItem input{
+        height: 2.3rem;
+    }
+    .form button {
         height: 3rem;
+        width: 7rem;
+    }
+}
+@media only screen and (max-height: 700px){
+    .icon{
+        display: none;
+    }
+}
+@media only screen and (max-height: 600px){
+    .formItem{
+        padding: .2rem;
+    }
+    .title p{
+        font-size: 1.5rem;
     }
 }
