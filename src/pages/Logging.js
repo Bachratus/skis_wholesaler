@@ -1,17 +1,36 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { json } from "react-router-dom";
+import classes from './Logging.module.css'
 
 const LoggingPage = () => {
+  const [error,setError]=useState(null)
+
   const isLoggedIn = useLoaderData();
   const navigate = useNavigate();
   useEffect(() => {
     if (isLoggedIn) navigate("/home");
   }, [isLoggedIn, navigate]);
 
+  const logInHandler = async () =>{
+    setError(null)
+    try{
+      const response = await fetch('https://react-http-9cc9c-default-rtdb.europe-west1.firebasedatabase.app/LoginStatus.json',{
+        method:'PUT',
+        body:JSON.stringify({isLoggedIn:true})
+      })
+      if(!response.ok) throw new Error("Something went wrong")
+      navigate('/home')
+    }catch(error){
+      setError(error.message)
+    }
+  }
+  
   return (
     <>
       <p>Logging page</p>
+      {error && <p>{error.message}</p>}
+      <button onClick={logInHandler}>log in</button>
     </>
   );
 };

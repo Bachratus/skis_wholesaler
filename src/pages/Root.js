@@ -4,10 +4,7 @@ import Header from "../components/Layout/Header";
 const Root = () => {
   return (
     <>
-      <Header/>
-      <main>
         <Outlet/>
-      </main>
     </>
   );
 };

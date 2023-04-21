@@ -1,7 +1,7 @@
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <>
       <header className={classes.header}>
@@ -16,6 +16,9 @@ const Header = () => {
         </div>
         <div className={classes.cart}>
           <HeaderCartButton/>
+        </div>
+        <div className={classes.logout}>
+          <button onClick={props.logoutHander}>Logout</button>
         </div>
       </header>
     </>

@@ -1,18 +1,38 @@
 import { Outlet, json, useLoaderData } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Layout/Header";
 
 const AppRoot = () => {
+  const [error,setError] =useState();
+
   const isLoggedIn = useLoaderData();
   const navigate = useNavigate();
-  useEffect(()=>{
-    if(!isLoggedIn) navigate('/')
-  },[isLoggedIn,navigate])
+  useEffect(() => {
+    if (!isLoggedIn) navigate("/");
+  }, [isLoggedIn, navigate]);
+
+  const onLogoutHandler = async () => {
+    setError(null)
+    try{
+      const response = await fetch('https://react-http-9cc9c-default-rtdb.europe-west1.firebasedatabase.app/LoginStatus.json',{
+        method:'PUT',
+        body:JSON.stringify({isLoggedIn:false})
+      })
+      if(!response.ok) throw new Error("Something went wrong")
+      navigate('/')
+    }catch(error){
+      setError(error.message)
+    }
+  }
 
   return (
     <>
       <div>{isLoggedIn.toString()}</div>
-      <Outlet />
+      <Header logoutHander={onLogoutHandler}/>
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 };
