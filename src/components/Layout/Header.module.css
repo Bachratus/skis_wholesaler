@@ -31,9 +31,10 @@
 }
 
 .navigation div{
+    min-width: 80px;
     line-height: 8vh;
     text-align: center;
-    width: 25%;
+    width: 17%;
     color: white;
     font-weight: bold;
     font-size: 1.1rem;
@@ -50,19 +51,41 @@
 .logout{
     width: 5%;
     text-align: center;
+    padding: 1vh;
 }
 
 .logout button{
-    margin-top: 1.5vh;
-    background-color: rgba(45, 126, 197, 0.711);
+    cursor: pointer;
+    border-radius: 25px;
+    display: block;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+    margin: 0 auto;
+    background-color:rgb(60, 110, 203) ;
+    font-weight: bold;
+}
+.logout button:hover,
+.logout button:active
+{
+    background-color: #0d4cc2;
 }
 
-.logout svg{
-    width: 1.5rem;
-    height: 4vh;
+.logout img{
+    width: 60%;
+    height: 60%;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 5%;
 }
 
-@media only screen and (max-width:924px){
+
+  @media only screen and (max-width:1300px){
+    .logout{
+        width: 10%;
+    }
+  }
+  @media only screen and (max-width:924px){
     .logo p:first-child{
         display:none
     }
@@ -70,4 +93,8 @@
         display: block;
     }
   }
-
+  @media only screen and (max-width:600px){
+    .logout{
+        width: 15%;
+    }
+  }

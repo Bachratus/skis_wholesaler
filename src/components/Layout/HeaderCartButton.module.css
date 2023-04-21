@@ -5,7 +5,7 @@
   cursor: pointer;
   font: inherit;
   border: none;
-  background-color: #3d71c0;
+  background-color: rgb(60, 110, 203);
   color: white;
   padding: 0.75rem 3rem;
   display: flex;

@@ -1,0 +1,123 @@
+:root{
+    --containerHeight: 650px;
+    --containerWidth: 600px;
+}
+.container{
+    position: absolute;
+    border-radius: 25px;
+    top: calc(50vh - var(--containerHeight) / 2 );
+    left: calc(50vw - var(--containerWidth) / 2 );
+    background-color: whitesmoke;
+    height: var(--containerHeight);
+    width: var(--containerWidth);
+}
+.title{
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    background-color: rgb(60, 110, 203);
+    height: calc(0.12 * var(--containerHeight));
+    text-align: center;
+}
+.title p{
+    font-size: 2rem;
+    line-height: 2rem;
+    padding-bottom: .3rem;
+}
+.icon{
+    display: flex;
+    flex-direction: column;
+    height:calc(0.25 * var(--containerHeight)) ;
+    justify-content: space-around;
+}
+
+.iconBackground{
+    background-color: rgb(60, 110, 203);
+    margin-left: calc(50% - 50px);
+    width:fit-content;
+    border-radius: 50px;
+    padding: .1rem;
+}
+.iconBackground img{
+    display: block;
+    height: 100px;
+    width: 100px;
+}
+
+.form{
+    display: flex;
+    justify-content: space-around;
+    height:calc(0.5 * var(--containerHeight)) ;
+}
+.form form{
+    display: block;
+    flex-grow: 0.5;
+}
+.formItem{
+padding: 1rem;
+}
+
+.formItem label{
+    color: rgb(60, 110, 203);
+    display: block;
+    font-size: 1.5rem;
+}
+
+.formItem input{
+    display: block;
+    height: 3rem;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid rgb(60, 110, 203);
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    padding-left: 1rem;
+}
+
+.button{
+    text-align: right;
+}
+
+.form button{
+    background-color: rgb(60, 110, 203);
+    height: 4rem;
+    width: 8rem;
+    border: none;
+    border-radius: 30px;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}
+.form button:hover{
+    background-color: #0d4cc2;
+}
+
+@media only screen and (max-width:700px){
+    :root{
+        --containerWidth: 500px;
+    }
+}
+@media only screen and (max-width:530px){
+    :root{
+        --containerWidth: 350px;
+    }
+}
+@media only screen and (max-height:740px){
+    :root{
+        --containerHeight: 500px;
+    }
+    .formItem input{
+        height: 2rem;
+        font-size: 1rem;
+    }
+    .formItem label{
+        font-size: 1rem;
+    }
+    .form button{
+        height: 3rem;
+    }
+}
