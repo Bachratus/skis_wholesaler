@@ -6,7 +6,8 @@ const Header = () => {
     <>
       <header className={classes.header}>
         <div className={classes.logo}>
-          <p>Skis wholesaler</p>
+          <p>Skis Wholesaler</p>
+          <p>SW</p>
         </div>
         <div className={classes.navigation}>
           <div>Contact</div>

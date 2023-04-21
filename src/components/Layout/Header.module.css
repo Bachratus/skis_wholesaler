@@ -6,7 +6,7 @@
     max-width: 1560px;
     margin: 0 auto;
     height: 8vh;
-    min-width: 770px;
+    min-width: 520px;
 }
 
 .logo{
@@ -19,6 +19,9 @@
     text-align: center;
     font-size: 1.8rem;
     font-weight: bold;
+}
+.logo p:last-child{
+    display: none;
 }
 
 .navigation{
@@ -40,4 +43,16 @@
     width: 20%;
 }
 
+.altLogo{
+    display: none;
+}
+
+@media only screen and (max-width:924px){
+    .logo p:first-child{
+        display:none
+    }
+    .logo p:last-child{
+        display: block;
+    }
+  }
 
