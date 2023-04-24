@@ -68,6 +68,7 @@ const ContactPage = () => {
               blurHandler={() => {}}
               warningText="Please enter valid content!"
             />
+            {/*<textarea type="text" rows='5'/>*/}
             <div className={classes.actions}>
               <Button type="submit" isValid={false} text="Send" />
             </div>

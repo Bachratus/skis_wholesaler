@@ -5,7 +5,6 @@
   height: 85vh;
   width: 95%;
   max-width: 1560px;
-  min-width: 900px;
   margin: 0 auto;
   margin-top: 1rem;
   overflow:auto
@@ -19,7 +18,6 @@
   display: flex;
   flex-direction: column;
   width: 49%;
-  max-width: 560px;
   color: white;
 }
 
@@ -49,7 +47,7 @@
 
 .ask {
   max-width: 560px;
-  min-width: 420px;
+  min-width: 340px;
   min-height: 603px;
   color: white;
   text-transform: uppercase;
@@ -77,3 +75,28 @@
   text-align: right;
 }
 
+@media (max-width:901px){
+  .container{
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+  }
+  .ask{
+    margin-top: 2rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+  .ask h1{
+    font-size: 1.7rem;
+  }
+}
+@media (max-width:480px){
+  .container{
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+  }
+  .ask{
+    margin-top: 2rem;
+  }
+}
