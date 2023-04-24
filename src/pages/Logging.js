@@ -4,6 +4,7 @@ import { json } from "react-router-dom";
 import classes from "./Logging.module.css";
 import profilePng from "../components/Icons/profilePng.png";
 import useInput from "../hooks/use-input";
+import Input from "../components/UI/Input";
 
 const LoggingPage = () => {
   const {
@@ -44,11 +45,11 @@ const LoggingPage = () => {
     }
   };
 
-  let formIsValid=false;
-  if(isLoginValid && isPasswordValid) formIsValid=true;
+  let formIsValid = false;
+  if (isLoginValid && isPasswordValid) formIsValid = true;
   const submitHandler = (event) => {
     event.preventDefault();
-    if(!formIsValid) return;
+    if (!formIsValid) return;
 
     logInHandler();
   };
@@ -65,28 +66,29 @@ const LoggingPage = () => {
         </div>
         <div className={classes.form}>
           <form onSubmit={submitHandler}>
-            <div className={classes.formItem}>
-              <label>Login</label>
-              <input
-                className={isLoginInputValid ? "" : classes.invalid}
-                onChange={loginChangeHandler}
-                value={enteredLogin}
-                onBlur={loginInputBlurHandler}
-              />
-              {!isLoginInputValid && <p className={classes.invalid}>Please enter valid login!</p>}
-            </div>
-            <div className={classes.formItem}>
-              <label>Password</label>
-              <input
-                className={isPasswordInputValid ? "" : classes.invalid}
-                onChange={passwordChangeHandler}
-                value={enteredPassword}
-                onBlur={passwordInputBlurHandler}
-              />
-              {!isPasswordInputValid && <p className={classes.invalid}>Please enter valid password!</p>}
-            </div>
+            <Input
+              title="Login"
+              isInputValid={isLoginInputValid}
+              changeHandler={loginChangeHandler}
+              enteredValue={enteredLogin}
+              blurHandler={loginInputBlurHandler}
+              warningText='Please enter valid login!'
+            />
+            <Input
+              title="Password"
+              isInputValid={isPasswordInputValid}
+              changeHandler={passwordChangeHandler}
+              enteredValue={enteredPassword}
+              blurHandler={passwordInputBlurHandler}
+              warningText='Please enter valid password!'
+            />
             <div className={classes.button}>
-              <button className={formIsValid ? '' : classes.invalid} type="submit">Continue</button>
+              <button
+                className={formIsValid ? "" : classes.invalid}
+                type="submit"
+              >
+                Continue
+              </button>
             </div>
           </form>
         </div>

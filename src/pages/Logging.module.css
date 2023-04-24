@@ -61,26 +61,6 @@
     display: block;
     flex-grow: 0.5;
 }
-.formItem{
-    padding: 1rem;
-}
-
-.formItem label{
-    color: rgb(60, 110, 203);
-    display: block;
-    font-size: 1.5rem;
-}
-
-.formItem input{
-    display: block;
-    height: 2.5rem;
-    width: 100%;
-    border-radius: 20px;
-    border: 2px solid rgb(60, 110, 203);
-    margin-top: 1rem;
-    font-size: 1.3rem;
-    padding-left: 1rem;
-}
 
 .button{
     text-align: right;
@@ -110,15 +90,6 @@
     background-color: #0d4cc2;
 }
 
-input.invalid{
-    background-color: rgb(244, 201, 201);
-    border-color: red;
-}
-
-p.invalid{
-    color: red;
-    background-color: transparent;
-}
 button.invalid{
     background-color: rgb(152, 152, 152);
     cursor:not-allowed;
