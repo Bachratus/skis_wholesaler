@@ -1,17 +1,18 @@
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
 import logoutIcon from '../Icons/logoutIcon.png'
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
     <>
       <header className={classes.header}>
         <div className={classes.logo}>
-          <p>Skis Wholesaler</p>
-          <p>SW</p>
+          <Link to='/home' >Skis Wholesaler</Link>
+          <Link to='/home' >SW</Link>
         </div>
         <div className={classes.navigation}>
-          <div>Contact</div>
+          <div><Link to='/Contact'>Contact</Link></div>
           <div>About us</div>
           <div>Store</div>
         </div>

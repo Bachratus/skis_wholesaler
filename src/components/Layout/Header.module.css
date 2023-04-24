@@ -12,15 +12,23 @@
 .logo{
     width: 25%;
     background-color: rgb(60, 110, 203);
+    text-align: center;
 }
-.logo p{
+
+.logo:hover{
+    background-color: rgba(10, 65, 183, .8);
+    transition: .3s;
+}
+
+.logo a{
     color: white;
     line-height: 8vh;
     text-align: center;
     font-size: 1.8rem;
     font-weight: bold;
+    text-decoration: none;
 }
-.logo p:last-child{
+.logo a:last-child{
     display: none;
 }
 
@@ -38,6 +46,16 @@
     color: white;
     font-weight: bold;
     font-size: 1.1rem;
+}
+.navigation div:hover{
+    background-color: rgba(0,0,0,.2);
+    font-size: 1.2rem;
+    transition: .3s;
+}
+
+.navigation a{
+    color: white;
+    text-decoration: none;
 }
 
 .cart{
@@ -85,11 +103,11 @@
         width: 10%;
     }
   }
-  @media only screen and (max-width:924px){
-    .logo p:first-child{
+  @media only screen and (max-width:945px){
+    .logo a:first-child{
         display:none
     }
-    .logo p:last-child{
+    .logo a:last-child{
         display: block;
     }
   }
