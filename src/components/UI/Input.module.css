@@ -1,11 +1,13 @@
 .formItem{
-    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .formItem label{
     color: rgb(60, 110, 203);
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 .formItem input{
@@ -14,7 +16,7 @@
     width: 100%;
     border-radius: 20px;
     border: 2px solid rgb(60, 110, 203);
-    margin-top: 1rem;
+    margin-top: .3rem;
     font-size: 1.3rem;
     padding-left: 1rem;
 }
@@ -24,6 +26,7 @@ input.invalid{
 }
 
 p.invalid{
+    margin-top: .5rem;
     color: red;
     background-color: transparent;
 }

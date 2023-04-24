@@ -60,10 +60,13 @@
 .form form{
     display: block;
     flex-grow: 0.5;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .button{
     text-align: right;
+    padding-top: 2rem;
 }
 .error{
     background-color: red;
@@ -74,29 +77,7 @@
     font-size: 1.4rem;
 }
 
-.form button{
-    background-color: rgb(60, 110, 203);
-    height: 4rem;
-    width: 8rem;
-    border: none;
-    border-radius: 30px;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    font-size: 1.2rem;
-    color: white;
-    cursor: pointer;
-}
-.form button:hover{
-    background-color: #0d4cc2;
-}
 
-button.invalid{
-    background-color: rgb(152, 152, 152);
-    cursor:not-allowed;
-}
-button.invalid:hover{
-    background-color: rgb(152, 152, 152);
-}
 @media only screen and (max-height: 800px){
     .icon{
         height:calc(0.2 * var(--containerHeight)) ;
@@ -112,7 +93,7 @@ button.invalid:hover{
         width: 7rem;
     }
 }
-@media only screen and (max-height: 700px){
+@media only screen and (max-height: 720px){
     .icon{
         display: none;
     }
@@ -123,5 +104,11 @@ button.invalid:hover{
     }
     .title p{
         font-size: 1.5rem;
+    }
+}
+
+@media (max-height:550px){
+    .button{
+        padding-top: .1rem;
     }
 }

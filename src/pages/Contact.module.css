@@ -1,12 +1,14 @@
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
   height: 85vh;
   width: 95%;
   max-width: 1560px;
+  min-width: 900px;
   margin: 0 auto;
   margin-top: 1rem;
+  overflow:auto
 }
 
 .contact ul {
@@ -17,6 +19,7 @@
   display: flex;
   flex-direction: column;
   width: 49%;
+  max-width: 560px;
   color: white;
 }
 
@@ -27,31 +30,50 @@
   text-align: center;
 }
 
-.contact h2{
-    margin-top: 3rem;
+.contact h2 {
+  margin-top: 3rem;
 }
 
 .open_hours {
-  text-align: center
+  text-align: center;
 }
-.contact .data{
-    text-align: center;
+.contact .data {
+  text-align: center;
 }
-.contact span{
-    display: block;
+.contact span {
+  display: block;
 }
-.contact h3{
-    margin-top: 2rem;
+.contact h3 {
+  margin-top: 2rem;
 }
-
 
 .ask {
-    color: white;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    padding-top: 1rem;
-    padding-left: 3rem;
-    border-radius: 50px;
-    width: 49%;
-    background-color: rgb(60, 110, 203);
+  max-width: 560px;
+  min-width: 420px;
+  min-height: 603px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 50px;
+  width: 49%;
+  background-color: rgb(60, 110, 203);
 }
+.ask form {
+  margin-top: 2rem;
+  background-color: rgb(228, 228, 235);
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+.actions {
+  margin-top: 1rem;
+  text-align: right;
+}
+

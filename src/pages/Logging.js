@@ -5,6 +5,7 @@ import classes from "./Logging.module.css";
 import profilePng from "../components/Icons/profilePng.png";
 import useInput from "../hooks/use-input";
 import Input from "../components/UI/Input";
+import Button from "../components/UI/Button";
 
 const LoggingPage = () => {
   const {
@@ -83,12 +84,7 @@ const LoggingPage = () => {
               warningText='Please enter valid password!'
             />
             <div className={classes.button}>
-              <button
-                className={formIsValid ? "" : classes.invalid}
-                type="submit"
-              >
-                Continue
-              </button>
+              <Button isValid={formIsValid} type="submit" text='Continue'/>
             </div>
           </form>
         </div>
