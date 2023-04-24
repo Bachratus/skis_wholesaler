@@ -1,5 +1,52 @@
-.contact{
-    width: 100px;
-    height: 100px;
-    background-color: whitesmoke;
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 85vh;
+  width: 95%;
+  max-width: 1560px;
+  margin: 0 auto;
+  margin-top: 1rem;
 }
+
+.contact ul {
+  list-style: none;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  color: white;
+}
+
+.contact h1 {
+  padding-top: 1rem;
+  text-transform: uppercase;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.contact h2{
+    margin-top: 3rem;
+}
+
+.open_hours {
+  text-align: center
+}
+.contact .data{
+    text-align: center;
+}
+.contact span{
+    display: block;
+}
+.contact h3{
+    margin-top: 2rem;
+}
+
+
+
+.ask {
+    width: 49%;
+    background-color: blue;
+  }
