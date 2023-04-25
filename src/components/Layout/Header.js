@@ -14,7 +14,7 @@ const Header = (props) => {
         <div className={classes.navigation}>
           <div><Link to='/contact'>Contact</Link></div>
           <div><Link to='/about-us'>About us</Link></div>
-          <div>Store</div>
+          <div><Link to='/store'>Store</Link></div>
         </div>
         <div className={classes.cart}>
           <HeaderCartButton/>

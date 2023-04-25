@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 85vh;
+  width: 95%;
+  max-width: 1560px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  overflow: auto;
+}
+section.filters {
+  display: flex;
+  flex-grow: 0.2;
+  justify-content: space-around;
+  color: white;
+}
+div.filters {
+  min-width: 250px;
+  width: 40%;
+  border: 2px solid black;
+  background-color: rgba(0, 0, 0, 0.209);
+  height: 100%;
+  padding: 2rem;
+  overflow-y: scroll;
+}
+.container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.container h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.filters ul {
+  display: flex;
+  flex-direction: column;
+}
+.filters li {
+  display: flex;
+}
+.filters span {
+  display: block;
+  flex-grow: 1;
+}
+.filters input {
+  display: block;
+}
+.filters button {
+  margin-top: 2rem;
+}
+
+section.products {
+  background-color: blue;
+  flex-grow: 2;
+}
+
+
+
+
+div.filters::-webkit-scrollbar {
+  width: 10px;
+}
+div.filters::-webkit-scrollbar-thumb {
+  background-color: rgb(60, 110, 203);
+  border-radius: 5px;
+  cursor: pointer;
+}
