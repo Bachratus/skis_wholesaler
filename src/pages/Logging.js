@@ -73,18 +73,19 @@ const LoggingPage = () => {
               changeHandler={loginChangeHandler}
               enteredValue={enteredLogin}
               blurHandler={loginInputBlurHandler}
-              warningText='Please enter valid login!'
+              warningText="Please enter valid login!"
             />
             <Input
+              type="password"
               title="Password"
               isInputValid={isPasswordInputValid}
               changeHandler={passwordChangeHandler}
               enteredValue={enteredPassword}
               blurHandler={passwordInputBlurHandler}
-              warningText='Please enter valid password!'
+              warningText="Please enter valid password!"
             />
             <div className={classes.button}>
-              <Button isValid={formIsValid} type="submit" text='Continue'/>
+              <Button isValid={formIsValid} type="submit" text="Continue" />
             </div>
           </form>
         </div>

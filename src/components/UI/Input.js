@@ -14,14 +14,13 @@ const Input = (props) => {
       <div className={classes.formItem}>
         <label>{title}</label>
         <input
+          type={props.type}
           className={isInputValid ? "" : classes.invalid}
           onChange={changeHandler}
           value={enteredValue}
           onBlur={blurHandler}
         />
-        {!isInputValid && (
-          <p className={classes.invalid}>{warningText}</p>
-        )}
+        {!isInputValid && <p className={classes.invalid}>{warningText}</p>}
       </div>
     </>
   );
