@@ -1,9 +1,9 @@
-import classes from "./Input.module.css";
+import classes from "./Textarea.module.css";
 
-const Input = (props) => {
+const Textarea = (props) => {
   const {
     title,
-    isInputValid,
+    isAreaValid,
     changeHandler,
     enteredValue,
     blurHandler,
@@ -12,15 +12,16 @@ const Input = (props) => {
   return (
     <div className={classes.formItem}>
       <label>{title}</label>
-      <input
-        type={props.type}
-        className={isInputValid ? "" : classes.invalid}
+      <textarea
+        type="text"
+        rows={props.rows}
+        className={isAreaValid ? "" : classes.invalid}
         onChange={changeHandler}
         value={enteredValue}
         onBlur={blurHandler}
       />
-      {!isInputValid && <p className={classes.invalid}>{warningText}</p>}
+      {!isAreaValid && <p className={classes.invalid}>{warningText}</p>}
     </div>
   );
 };
-export default Input;
+export default Textarea;
