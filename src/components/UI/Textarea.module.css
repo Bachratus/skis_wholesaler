@@ -1,0 +1,32 @@
+.formItem{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.formItem label{
+    color: rgb(60, 110, 203);
+    display: block;
+    font-size: 1.5em;
+}
+
+.formItem textarea{
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid rgb(60, 110, 203);
+    margin-top: .3rem;
+    font-size: 1.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+textarea.invalid{
+    background-color: rgb(244, 201, 201);
+    border-color: red;
+}
+
+p.invalid{
+    margin-top: .5rem;
+    color: red;
+    background-color: transparent;
+}

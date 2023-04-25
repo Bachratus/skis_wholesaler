@@ -1,6 +1,7 @@
 import classes from "./Contact.module.css";
 import Input from "../components/UI/Input";
 import Button from "../components/UI/Button";
+import Textarea from "../components/UI/Textarea";
 
 const ContactPage = () => {
   const submitHandler = (event) => {
@@ -60,14 +61,14 @@ const ContactPage = () => {
               blurHandler={() => {}}
               warningText="Please enter valid email!"
             />
-            <Input
+            <Textarea 
+              rows={5}
               title="Question"
-              isInputValid={true}
+              isAreaValid={true}
               changeHandler={() => {}}
               enteredValue=""
               blurHandler={() => {}}
-              warningText="Please enter valid content!"
-            />
+              warningText="Please enter valid content!"/>
             {/*<textarea type="text" rows='5'/>*/}
             <div className={classes.actions}>
               <Button type="submit" isValid={false} text="Send" />

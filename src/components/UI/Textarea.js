@@ -2,6 +2,7 @@ import classes from "./Textarea.module.css";
 
 const Textarea = (props) => {
   const {
+    rows,
     title,
     isAreaValid,
     changeHandler,
@@ -14,7 +15,7 @@ const Textarea = (props) => {
       <label>{title}</label>
       <textarea
         type="text"
-        rows={props.rows}
+        rows={rows}
         className={isAreaValid ? "" : classes.invalid}
         onChange={changeHandler}
         value={enteredValue}
