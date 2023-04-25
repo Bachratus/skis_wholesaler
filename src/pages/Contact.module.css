@@ -73,27 +73,11 @@
   overflow-y: scroll;
 }
 
-.ask form::-webkit-scrollbar{
-  width: 10px;
-}
-.ask form::-webkit-scrollbar-thumb{
-  background-color: #999;
-  border-radius: 5px;
-}
-.ask form::-webkit-scrollbar-track-piece:end {
-  margin-bottom: 22px; 
-}
-
-.ask form::-webkit-scrollbar-track-piece:start {
-  margin-top: 22px;
-}
-
 .actions {
   display: flex;
   margin-top: 1rem;
   justify-content: right;
 }
-
 .actions p{
   margin-right: 2rem;
 display: flex;
@@ -134,4 +118,33 @@ justify-content: space-around;
   .ask{
     margin-top: 2rem;
   }
+}
+
+
+textarea::-webkit-scrollbar{
+  width: 10px;
+}
+textarea::-webkit-scrollbar-thumb{
+  background-color: #999;
+  border-radius: 5px;
+}
+textarea::-webkit-scrollbar-track-piece:end {
+  margin-bottom: 10px; 
+}
+textarea::-webkit-scrollbar-track-piece:start {
+  margin-top: 10px;
+}
+
+.ask form::-webkit-scrollbar{
+  width: 10px;
+}
+.ask form::-webkit-scrollbar-thumb{
+  background-color: #999;
+  border-radius: 5px;
+}
+.ask form::-webkit-scrollbar-track-piece:end {
+  margin-bottom: 22px; 
+}
+.ask form::-webkit-scrollbar-track-piece:start {
+  margin-top: 22px;
 }

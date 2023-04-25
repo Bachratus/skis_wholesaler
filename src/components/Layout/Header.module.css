@@ -22,6 +22,7 @@
 
 .logo a{
     color: white;
+    display: block;
     line-height: 8vh;
     text-align: center;
     font-size: 1.8rem;
@@ -40,7 +41,6 @@
 
 .navigation div{
     min-width: 80px;
-    line-height: 8vh;
     text-align: center;
     width: 17%;
     color: white;
@@ -54,6 +54,8 @@
 }
 
 .navigation a{
+    line-height: 8vh;
+    display: block;
     color: white;
     text-decoration: none;
 }
