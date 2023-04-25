@@ -51,12 +51,16 @@ div.filters {
 }
 
 section.products {
-  background-color: blue;
   flex-grow: 2;
+  border: 2px solid black;
 }
-
-
-
+section.products header {
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.179);
+    border-bottom: 2px solid black;
+}
 
 div.filters::-webkit-scrollbar {
   width: 10px;
@@ -65,4 +69,54 @@ div.filters::-webkit-scrollbar-thumb {
   background-color: rgb(60, 110, 203);
   border-radius: 5px;
   cursor: pointer;
+}
+
+
+
+
+ul.products{
+    background-color:beige;
+}
+
+ul.products li{
+    padding-top: .5rem;
+    height: 8rem;
+    padding-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image{
+    flex-grow: 1;
+}
+.image img{
+    height: 100%;
+}
+.name{
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.quantity{
+    flex-grow: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.quantity input{
+    border: 2px solid rgb(60, 110, 203);
+    border-radius: 25px;
+    height: 3rem;
+    width: 4rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+}
+.actions{
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
