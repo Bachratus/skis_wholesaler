@@ -4,6 +4,7 @@ import HomePage from "./pages/Home";
 import LoggingPage, { loader as loggingLoader } from "./pages/Logging";
 import AppRoot, { loader as AppRootLoader } from "./pages/AppRoot";
 import ContactPage from "./pages/Contact";
+import AboutUsPage from "./pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -11,10 +12,16 @@ const router = createBrowserRouter([
     element: <RootPage />,
     children: [
       { index: true, loader: loggingLoader, element: <LoggingPage /> },
-      { path: '/', loader:AppRootLoader, element: <AppRoot/>, children:[
-        { path:'/home', element: <HomePage /> },
-        { path: '/contact', element: <ContactPage />}
-      ]},
+      {
+        path: "/",
+        loader: AppRootLoader,
+        element: <AppRoot />,
+        children: [
+          { path: "/home", element: <HomePage /> },
+          { path: "/contact", element: <ContactPage /> },
+          { path: "/about-us", element: <AboutUsPage /> },
+        ],
+      },
     ],
   },
 ]);

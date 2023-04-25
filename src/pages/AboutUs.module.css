@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 85vh;
+  width: 95%;
+  max-width: 1560px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  overflow: auto;
+}
+
+.letter {
+  padding: 3rem;
+  height: 49%;
+  background-color: rgb(60, 110, 203);
+  color: white;
+}
+.container p {
+  height: 80%;
+  text-align: justify;
+  overflow-y: scroll;
+  padding-right: 1rem;
+}
+.container h1{
+    margin-bottom: 1rem;
+}
+.about_us {
+    display: flex;
+  height: 49%;
+  justify-content: space-between;
+}
+
+.story{
+    width: 49%;
+    background-color: rgb(141, 141, 162);
+    padding: 3rem;
+    color: white;
+}
+
+.members{
+    width: 49%;
+    background-color: rgb(141, 141, 162);
+    background-image: url('https://cdn2.psychologytoday.com/assets/styles/manual_crop_1_91_1_1528x800/public/2020-08/shutterstock_1731284125_0.jpg?itok=89UrdUt_');
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    color: white;
+}
+
+.container section p::-webkit-scrollbar {
+  width: 10px;
+}
+.container section p::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 5px;
+}

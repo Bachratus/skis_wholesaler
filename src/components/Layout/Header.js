@@ -13,7 +13,7 @@ const Header = (props) => {
         </div>
         <div className={classes.navigation}>
           <div><Link to='/contact'>Contact</Link></div>
-          <div>About us</div>
+          <div><Link to='/about-us'>About us</Link></div>
           <div>Store</div>
         </div>
         <div className={classes.cart}>
