@@ -120,21 +120,6 @@ justify-content: space-around;
   }
 }
 
-
-textarea::-webkit-scrollbar{
-  width: 10px;
-}
-textarea::-webkit-scrollbar-thumb{
-  background-color: #999;
-  border-radius: 5px;
-}
-textarea::-webkit-scrollbar-track-piece:end {
-  margin-bottom: 10px; 
-}
-textarea::-webkit-scrollbar-track-piece:start {
-  margin-top: 10px;
-}
-
 .ask form::-webkit-scrollbar{
   width: 10px;
 }
