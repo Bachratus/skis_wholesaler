@@ -17,12 +17,19 @@ const useInput = (whenValid) => {
         setIsInputValid(isValueValid)
     }
     
+    const resetInput = () => {
+        setEnteredValue('');
+        setIsValueValid(false)
+        setIsInputValid(true)
+    }
+
     return{
         enteredValue:enteredValue,
         isValueValid:isValueValid,
         isInputValid:isInputValid,
         onChangeHandler:onChangeHandler,
-        onBlurHandler:onBlurHandler
+        onBlurHandler:onBlurHandler,
+        resetInput:resetInput
     }
 }
 export default useInput;

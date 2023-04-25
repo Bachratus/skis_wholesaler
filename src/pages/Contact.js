@@ -2,10 +2,60 @@ import classes from "./Contact.module.css";
 import Input from "../components/UI/Input";
 import Button from "../components/UI/Button";
 import Textarea from "../components/UI/Textarea";
+import useInput from "../hooks/use-input";
+import { useState } from "react";
 
 const ContactPage = () => {
+  const {
+    enteredValue: enteredName,
+    isValueValid: isNameValid, //to form validity
+    isInputValid: isNameInputValid,
+    onChangeHandler: nameChangeHandler,
+    onBlurHandler: nameInputBlurHandler,
+    resetInput: resetNameInput,
+  } = useInput((value) => value.trim().length > 2);
+  const {
+    enteredValue: enteredSurname,
+    isValueValid: isSurnameValid, //to form validity
+    isInputValid: isSurnameInputValid,
+    onChangeHandler: surnameChangeHandler,
+    onBlurHandler: surnameInputBlurHandler,
+    resetInput: resetSurnameInput,
+  } = useInput((value) => value.trim().length > 2);
+  const {
+    enteredValue: enteredEmail,
+    isValueValid: isEmailValid, //to form validity
+    isInputValid: isEmailInputValid,
+    onChangeHandler: emailChangeHandler,
+    onBlurHandler: emailInputBlurHandler,
+    resetInput: resetEmailInput,
+  } = useInput((value) => value.trim().includes("@"));
+  const {
+    enteredValue: enteredQuery,
+    isValueValid: isQueryValid, //to form validity
+    isInputValid: isQueryAreaValid,
+    onChangeHandler: queryChangeHandler,
+    onBlurHandler: queryAreaBlurHandler,
+    resetInput: resetQueryInput,
+  } = useInput((value) => value.trim().length >= 10);
+  const [sent, setSent] = useState(false);
+
+  let formIsValid = false;
+  if (isNameValid && isSurnameValid && isEmailValid && isQueryValid)
+    formIsValid = true;
+
   const submitHandler = (event) => {
+    setSent(false)
     event.preventDefault();
+    if (!formIsValid) return;
+
+    resetNameInput();
+    resetSurnameInput();
+    resetEmailInput();
+    resetQueryInput();
+    setTimeout(()=>{
+      setSent(true)
+    },200)
   };
   return (
     <>
@@ -39,39 +89,40 @@ const ContactPage = () => {
           <form onSubmit={submitHandler}>
             <Input
               title="Name"
-              isInputValid={true}
-              changeHandler={() => {}}
-              enteredValue=""
-              blurHandler={() => {}}
+              isInputValid={isNameInputValid}
+              changeHandler={nameChangeHandler}
+              enteredValue={enteredName}
+              blurHandler={nameInputBlurHandler}
               warningText="Please enter valid name!"
             />
             <Input
               title="Surname"
-              isInputValid={true}
-              changeHandler={() => {}}
-              enteredValue=""
-              blurHandler={() => {}}
+              isInputValid={isSurnameInputValid}
+              changeHandler={surnameChangeHandler}
+              enteredValue={enteredSurname}
+              blurHandler={surnameInputBlurHandler}
               warningText="Please enter valid surname!"
             />
             <Input
               title="Email"
-              isInputValid={true}
-              changeHandler={() => {}}
-              enteredValue=""
-              blurHandler={() => {}}
+              isInputValid={isEmailInputValid}
+              changeHandler={emailChangeHandler}
+              enteredValue={enteredEmail}
+              blurHandler={emailInputBlurHandler}
               warningText="Please enter valid email!"
             />
-            <Textarea 
+            <Textarea
               rows={5}
               title="Question"
-              isAreaValid={true}
-              changeHandler={() => {}}
-              enteredValue=""
-              blurHandler={() => {}}
-              warningText="Please enter valid content!"/>
-            {/*<textarea type="text" rows='5'/>*/}
+              isAreaValid={isQueryAreaValid}
+              changeHandler={queryChangeHandler}
+              enteredValue={enteredQuery}
+              blurHandler={queryAreaBlurHandler}
+              warningText="The content must have min. 10 chars"
+            />
             <div className={classes.actions}>
-              <Button type="submit" isValid={false} text="Send" />
+              {sent && <p><span>Sent successfully!</span></p>}
+              <Button type="submit" isValid={formIsValid} text="Send" />
             </div>
           </form>
         </section>
