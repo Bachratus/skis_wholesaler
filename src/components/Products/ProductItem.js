@@ -1,17 +1,17 @@
 import classes from "./ProductItem.module.css";
 import Button from "../UI/Button";
 
-const ProductItem = () => {
+const ProductItem = (props) => {
   return (
     <li className={classes.item}>
       <div className={classes.image}>
         <img
-          src="https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg"
+          src={props.image}
           alt=""
         ></img>
       </div>
       <div className={classes.name}>
-        <span>Product name</span>
+        <span>{props.name}</span>
       </div>
       <div className={classes.quantity}>
         <div>
@@ -23,7 +23,7 @@ const ProductItem = () => {
           <Button isValid={true} text="Add to cart" />
         </div>
       </div>
-    </li>
+  </li>
   );
 };
 export default ProductItem;
