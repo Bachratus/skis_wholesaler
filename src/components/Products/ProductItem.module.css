@@ -1,6 +1,7 @@
 .item{
-    background-color: burlywood;
+    background-color: rgb(141, 141, 162);
     padding-top: .5rem;
+    margin-bottom: 10px;
     height: 8rem;
     padding-bottom: .5rem;
     display: flex;
@@ -14,6 +15,10 @@
     height: 100%;
 }
 .name{
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    overflow: hidden;
     flex-grow: 2;
     display: flex;
     flex-direction: column;

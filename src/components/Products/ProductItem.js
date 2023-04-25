@@ -11,7 +11,7 @@ const ProductItem = () => {
         ></img>
       </div>
       <div className={classes.name}>
-        <span>product name</span>
+        <span>Product name</span>
       </div>
       <div className={classes.quantity}>
         <div>
@@ -20,7 +20,7 @@ const ProductItem = () => {
       </div>
       <div className={classes.actions}>
         <div>
-          <Button text="Add to cart" />
+          <Button isValid={true} text="Add to cart" />
         </div>
       </div>
     </li>
