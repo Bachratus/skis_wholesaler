@@ -2,6 +2,44 @@ import classes from "./Store.module.css";
 import Button from "../components/UI/Button";
 import Products from "../components/Products/Products";
 
+const DUMMY_PRODUCTS = [
+  {
+    id: "p1",
+    image: "https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg",
+    name: "Narty Atomic",
+    price: 59.99,
+    size: "XL",
+  },
+  {
+    id: "p2",
+    image: "https://ski24.pl/121824-large_default/narty-head-shape-rx-head-pr-11-mbs.jpg",
+    name: "Narty HEAD",
+    price: 69.99,
+    size: "XL",
+  },
+  {
+    id: "p3",
+    image: "https://ski24.pl/122286-large_default/narty-head-shape-rx-head-sx-10.jpg",
+    name: "Narty HEAD",
+    price: 79.99,
+    size: "XL",
+  },
+  {
+    id: "p4",
+    image: "https://ski24.pl/128117-large_default/narty-head.jpg",
+    name: "Narty HEAD",
+    price: 89.99,
+    size: "XL",
+  },
+  {
+    id: "p5",
+    image: "https://ski24.pl/12527-large_default/narty-vlkl-rtm-75-marker-4-motion-10.jpg",
+    name: "Narty Völkl",
+    price: 99.99,
+    size: "XL",
+  },
+];
+
 const StorePage = () => {
   return (
     <div className={classes.container}>
@@ -78,7 +116,7 @@ const StorePage = () => {
       </section>
       <section className={classes.products}>
         <header>Products:</header>
-        <Products/>
+        <Products skisList={DUMMY_PRODUCTS}/>
       </section>
     </div>
   );

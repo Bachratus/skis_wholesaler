@@ -1,17 +1,20 @@
 import classes from "./ProductItem.module.css";
 import Button from "../UI/Button";
+import { useEffect } from "react";
 
 const ProductItem = (props) => {
+  const {id,image,name,price,size}= props.item
+
   return (
     <li className={classes.item}>
       <div className={classes.image}>
         <img
-          src={props.image}
+          src={image}
           alt=""
         ></img>
       </div>
       <div className={classes.name}>
-        <span>{props.name}</span>
+        <span>{name}</span>
       </div>
       <div className={classes.quantity}>
         <div>
