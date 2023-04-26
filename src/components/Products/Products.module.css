@@ -1,12 +1,1 @@
-.list{
-    max-height: 723px;
-    overflow-y: scroll;
-}
-.list::-webkit-scrollbar{
-    width: 10px;
-  }
-  .list::-webkit-scrollbar-thumb{
-    background-color: rgb(60, 110, 203);
-    border-radius: 5px;
-    cursor:pointer;
-  }
+

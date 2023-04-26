@@ -32,6 +32,31 @@ const Products = (props) => {
         image="https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg"
         name="Jakas narta"
       />
+      <ProductItem
+        image="https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg"
+        name="Jakas narta"
+      />
+      <ProductItem
+        image="https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg"
+        name="Jakas narta"
+      />
+      <ProductItem
+        image="https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg"
+        name="Jakas narta"
+      />
+      <ProductItem
+        image="https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg"
+        name="Jakas narta"
+      />
+      <ProductItem
+        image="https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg"
+        name="Jakas narta"
+      />
+      <ProductItem
+        image="https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg"
+        name="Jakas narta"
+      />
+      
     </ul>
   );
 };

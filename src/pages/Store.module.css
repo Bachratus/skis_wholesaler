@@ -7,7 +7,7 @@
   max-width: 1560px;
   margin: 0 auto;
   margin-top: 1rem;
-  overflow: auto;
+  overflow: hidden;
 }
 section.filters {
   display: flex;
@@ -53,6 +53,7 @@ div.filters {
 section.products {
   flex-grow: 2;
   border: 2px solid black;
+  overflow-y: scroll;
 }
 section.products header {
     padding: 1rem;
@@ -69,4 +70,17 @@ div.filters::-webkit-scrollbar-thumb {
   background-color: rgb(60, 110, 203);
   border-radius: 5px;
   cursor: pointer;
+}
+
+section.products::-webkit-scrollbar{
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.179);
+}
+section.products::-webkit-scrollbar-thumb{
+  background-color: rgb(60, 110, 203);
+  border-radius: 5px;
+  cursor:pointer;
+}
+section.products::-webkit-scrollbar-track-piece:start {
+  margin-top: calc(4.3rem);
 }
