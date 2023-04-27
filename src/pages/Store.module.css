@@ -51,7 +51,7 @@ div.filters {
 }
 
 section.products {
-  min-width: 940px;
+
   flex-grow: 2;
   border: 2px solid black;
   overflow-y: scroll;
