@@ -1,67 +1,36 @@
 import classes from "./Store.module.css";
 import Button from "../components/UI/Button";
 import Products from "../components/Products/Products";
-
-const DUMMY_PRODUCTS = [
-  {
-    id: "p1",
-    image: "https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg",
-    name: "Narty Atomic",
-    price: 59.99,
-    size: "XS",
-    forWhom: "female"
-  },
-  {
-    id: "p2",
-    image: "https://ski24.pl/121824-large_default/narty-head-shape-rx-head-pr-11-mbs.jpg",
-    name: "Narty HEAD",
-    price: 69.99,
-    size: "S",
-    forWhom: 'male'
-  },
-  {
-    id: "p3",
-    image: "https://ski24.pl/122286-large_default/narty-head-shape-rx-head-sx-10.jpg",
-    name: "Narty HEAD",
-    price: 79.99,
-    size: "M",
-    forWhom: 'male'
-  },
-  {
-    id: "p4",
-    image: "https://ski24.pl/128117-large_default/narty-head.jpg",
-    name: "Narty HEAD",
-    price: 89.99,
-    size: "L",
-    forWhom: 'female'
-  },
-  {
-    id: "p5",
-    image: "https://ski24.pl/12527-large_default/narty-vlkl-rtm-75-marker-4-motion-10.jpg",
-    name: "Narty Völkl",
-    price: 99.99,
-    size: "XL",
-    forWhom: 'female'
-  },
-  {
-    id: "p6",
-    image: "https://ski24.pl/123897-large_default/narty-head-supershape-ispeed-head-prd-12-z-grip-walk.jpg",
-    name: "Narty HEAD",
-    price: 109.99,
-    size: "XXL",
-    forWhom: 'male'
-  },
-  {
-    id: "p7",
-    image: "https://www.projektjunior.pl/14051-large_default/zestaw-narty-head-igs-rd-team-wiazania-evo-9-gw-ac-201920.jpg",
-    name: "Narty HEAD",
-    price: 119.99,
-    size: "XXXL",
-    forWhom: 'male'
-  },
-];
+import { useEffect } from "react";
+import { useCallback } from "react";
+import { useState } from "react";
 
 const StorePage = () => {
+  const [productsList, setProductsList] = useState([])
+
+  const fetchProducts = useCallback(async () => {
+    const response = await fetch(
+      "https://react-http-9cc9c-default-rtdb.europe-west1.firebasedatabase.app/skis/Items.json",
+    );
+    const data = await response.json();
+    const loadedProducts = [];
+    for(const key in data){
+      loadedProducts.push({
+        id: data[key].id,
+        name: data[key].name,
+        image: data[key].image,
+        price: data[key].price,
+        size: data[key].size,
+        forWhom: data[key].forWhom
+      });
+    }
+    setProductsList(loadedProducts)
+  },[]);
+
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
+
   return (
     <div className={classes.container}>
       <section className={classes.filters}>
@@ -137,7 +106,7 @@ const StorePage = () => {
       </section>
       <section className={classes.products}>
         <header>Products:</header>
-        <Products skisList={DUMMY_PRODUCTS}/>
+        <Products skisList={productsList} />
       </section>
     </div>
   );
