@@ -16,7 +16,7 @@ const StorePage = () => {
     const loadedProducts = [];
     for(const key in data){
       loadedProducts.push({
-        id: data[key].id,
+        id: 'p'+key,
         name: data[key].name,
         image: data[key].image,
         price: data[key].price,
