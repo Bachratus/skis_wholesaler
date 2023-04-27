@@ -9,7 +9,7 @@ const DUMMY_PRODUCTS = [
     name: "Narty Atomic",
     price: 59.99,
     size: "XS",
-    for: 'female'
+    forWhom: "female"
   },
   {
     id: "p2",
@@ -17,7 +17,7 @@ const DUMMY_PRODUCTS = [
     name: "Narty HEAD",
     price: 69.99,
     size: "S",
-    for: 'male'
+    forWhom: 'male'
   },
   {
     id: "p3",
@@ -25,7 +25,7 @@ const DUMMY_PRODUCTS = [
     name: "Narty HEAD",
     price: 79.99,
     size: "M",
-    for: 'male'
+    forWhom: 'male'
   },
   {
     id: "p4",
@@ -33,7 +33,7 @@ const DUMMY_PRODUCTS = [
     name: "Narty HEAD",
     price: 89.99,
     size: "L",
-    for: 'female'
+    forWhom: 'female'
   },
   {
     id: "p5",
@@ -41,7 +41,7 @@ const DUMMY_PRODUCTS = [
     name: "Narty Völkl",
     price: 99.99,
     size: "XL",
-    for: 'female'
+    forWhom: 'female'
   },
   {
     id: "p6",
@@ -49,7 +49,7 @@ const DUMMY_PRODUCTS = [
     name: "Narty HEAD",
     price: 109.99,
     size: "XXL",
-    for: 'male'
+    forWhom: 'male'
   },
   {
     id: "p7",
