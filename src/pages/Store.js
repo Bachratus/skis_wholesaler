@@ -8,28 +8,32 @@ const DUMMY_PRODUCTS = [
     image: "https://ski24.pl/134088-large_default/narty-zjazdowe-meskie-atomic-redster-tr-atomic-x12-z-grip-walk.jpg",
     name: "Narty Atomic",
     price: 59.99,
-    size: "XL",
+    size: "XS",
+    for: 'female'
   },
   {
     id: "p2",
     image: "https://ski24.pl/121824-large_default/narty-head-shape-rx-head-pr-11-mbs.jpg",
     name: "Narty HEAD",
     price: 69.99,
-    size: "XL",
+    size: "S",
+    for: 'male'
   },
   {
     id: "p3",
     image: "https://ski24.pl/122286-large_default/narty-head-shape-rx-head-sx-10.jpg",
     name: "Narty HEAD",
     price: 79.99,
-    size: "XL",
+    size: "M",
+    for: 'male'
   },
   {
     id: "p4",
     image: "https://ski24.pl/128117-large_default/narty-head.jpg",
     name: "Narty HEAD",
     price: 89.99,
-    size: "XL",
+    size: "L",
+    for: 'female'
   },
   {
     id: "p5",
@@ -37,6 +41,23 @@ const DUMMY_PRODUCTS = [
     name: "Narty Völkl",
     price: 99.99,
     size: "XL",
+    for: 'female'
+  },
+  {
+    id: "p6",
+    image: "https://ski24.pl/123897-large_default/narty-head-supershape-ispeed-head-prd-12-z-grip-walk.jpg",
+    name: "Narty HEAD",
+    price: 109.99,
+    size: "XXL",
+    for: 'male'
+  },
+  {
+    id: "p7",
+    image: "https://www.projektjunior.pl/14051-large_default/zestaw-narty-head-igs-rd-team-wiazania-evo-9-gw-ac-201920.jpg",
+    name: "Narty HEAD",
+    price: 119.99,
+    size: "XXXL",
+    forWhom: 'male'
   },
 ];
 

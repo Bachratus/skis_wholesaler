@@ -1,9 +1,8 @@
 import classes from "./ProductItem.module.css";
 import Button from "../UI/Button";
-import { useEffect } from "react";
 
 const ProductItem = (props) => {
-  const {id,image,name,price,size}= props.item
+  const {id,image,name,price,size,forWhom}= props.item
 
   return (
     <li className={classes.item}>
