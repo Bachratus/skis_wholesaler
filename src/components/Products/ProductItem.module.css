@@ -59,7 +59,8 @@
     max-height: 2.2rem;
     overflow: hidden;
 }
-.for_whom span:nth-child(2){
+.for_whom span:nth-child(2),
+.for_whom span:nth-child(3){
     margin-left: 2rem;
 }
 

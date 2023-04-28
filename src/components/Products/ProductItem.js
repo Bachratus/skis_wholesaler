@@ -2,7 +2,7 @@ import classes from "./ProductItem.module.css";
 import Button from "../UI/Button";
 
 const ProductItem = (props) => {
-  const {image, name, price, size, forWhom } = props.item;
+  const {image, name, price, size, forWhom, quantity } = props.item;
 
   return (
     <li className={classes.item}>
@@ -19,6 +19,7 @@ const ProductItem = (props) => {
         <div className={classes.for_whom}>
           <span>Size: {size}</span>
           <span>For: {forWhom}</span>
+          <span>Available: {quantity}</span>
         </div>
         </div>
       <div className={classes.quantity}>

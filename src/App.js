@@ -5,7 +5,7 @@ import LoggingPage, { loader as loggingLoader } from "./pages/Logging";
 import AppRoot, { loader as AppRootLoader } from "./pages/AppRoot";
 import ContactPage from "./pages/Contact";
 import AboutUsPage from "./pages/AboutUs";
-import StorePage from "./pages/Store";
+import StorePage, { loader } from "./pages/Store";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
           { path: "/home", element: <HomePage /> },
           { path: "/contact", element: <ContactPage /> },
           { path: "/about-us", element: <AboutUsPage /> },
-          { path: "/store", element: <StorePage/>}
+          { path: "/store", loader:loader, element: <StorePage/>}
         ],
       },
     ],

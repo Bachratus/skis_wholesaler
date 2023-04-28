@@ -1,36 +1,13 @@
 import classes from "./Store.module.css";
 import Button from "../components/UI/Button";
 import Products from "../components/Products/Products";
-import { useEffect } from "react";
-import { useCallback } from "react";
+import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 
 const StorePage = () => {
-  const [productsList, setProductsList] = useState([])
-
-  const fetchProducts = useCallback(async () => {
-    const response = await fetch(
-      "https://react-http-9cc9c-default-rtdb.europe-west1.firebasedatabase.app/skis/Items.json",
-    );
-    const data = await response.json();
-    const loadedProducts = [];
-    for(const key in data){
-      loadedProducts.push({
-        id: 'p'+key,
-        name: data[key].name,
-        image: data[key].image,
-        price: data[key].price,
-        size: data[key].size,
-        forWhom: data[key].forWhom
-      });
-    }
-    setProductsList(loadedProducts)
-  },[]);
-
-  useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
-
+  const loadedProductsList = useLoaderData();
+  const [productsList, setProductsList] = useState(loadedProductsList)
+  
   return (
     <div className={classes.container}>
       <section className={classes.filters}>
@@ -112,3 +89,23 @@ const StorePage = () => {
   );
 };
 export default StorePage;
+
+export const loader = async () => {
+  const response = await fetch(
+    "https://react-http-9cc9c-default-rtdb.europe-west1.firebasedatabase.app/skis/Items.json",
+  );
+  const data = await response.json();
+  const loadedProducts = [];
+  for(const key in data){
+    loadedProducts.push({
+      id: 'p'+key,
+      name: data[key].name,
+      image: data[key].image,
+      price: data[key].price,
+      size: data[key].size,
+      forWhom: data[key].forWhom,
+      quantity: data[key].quantity
+    });
+  }
+  return loadedProducts;
+}
