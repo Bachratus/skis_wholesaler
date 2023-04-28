@@ -15,6 +15,7 @@
   height: 49%;
   background-color: rgb(60, 110, 203);
   color: white;
+  border-radius: 50px;
 }
 .container p {
   height: 80%;
@@ -36,16 +37,18 @@
     background-color: rgb(141, 141, 162);
     padding: 3rem;
     color: white;
+    border-radius: 50px;
 }
 
 .members{
     width: 49%;
     background-color: rgb(141, 141, 162);
-    background-image: url('https://cdn2.psychologytoday.com/assets/styles/manual_crop_1_91_1_1528x800/public/2020-08/shutterstock_1731284125_0.jpg?itok=89UrdUt_');
+    background-image: url('https://img.redbull.com/images/c_fill,w_1200,h_600,g_auto,f_auto,q_auto/redbullcom/2015/04/04/1331715137394_2/marcel-hirscher-colours-making-of');
     background-size: cover;
     background-position: center;
     padding: 3rem;
     color: white;
+    border-radius: 50px;
 }
 
 .container section p::-webkit-scrollbar {

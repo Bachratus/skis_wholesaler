@@ -28,7 +28,21 @@ const AboutUsPage = () => {
           ultricies id lorem in luctus. In ac nunc eu orci tempor pellentesque
           ut quis urna. Nullam dictum pharetra ipsum, sit amet hendrerit ligula.
           Quisque faucibus, ipsum quis luctus eleifend, libero odio aliquam
-          augue, et gravida felis turpis non tellus.
+          augue, et gravida felis turpis non tellus.sollicitudin ante, sed
+          mollis turpis. Class aptent taciti sociosqu ad litora torquent per
+          conubia nostra, per inceptos himenaeos. Quisque porta neque a suscipit
+          elementum. Fusce orci arcu, auctor nec venenatis posuere, congue nec
+          metus. Donec sit amet tempor ex, eget dictum erat. In non justo cursus
+          lorem ultrices lobortis. Etiam ultricies id lorem in luctus. In ac
+          nunc eu orci tempor pellentesque ut quis urna. Nullam dictum pharetra
+          ipsum, sit amet hendrerit ligula. Quisque faucibus, ipsum quis luctus
+          eleifend, libero odio aliquam augue, et gravida felis turpis non
+          tellus.amet magna sapien. Nulla porttitor lacus non sapien condimentum
+          iaculis. Praesent porta libero nulla, in luctus ipsum lobortis quis.
+          Curabitur et tortor sem. Maecenas vestibulum in tellus vel fringilla.
+          Nullam cursus porttitor urna, ac auctor enim molestie a. Curabitur nec
+          lorem nisl. Vestibulum finibus, odio sit amet venenatis dictum, augue
+          ipsum imperdiet metus, id euismod metus nulla et est.
         </p>
       </section>
       <section className={classes.about_us}>
@@ -45,11 +59,16 @@ const AboutUsPage = () => {
             fringilla. Nullam cursus porttitor urna, ac auctor enim molestie a.
             Curabitur nec lorem nisl. Vestibulum finibus, odio sit amet
             venenatis dictum, augue ipsum imperdiet metus, id euismod metus
+            nulla et est.amet magna sapien. Nulla porttitor lacus non sapien
+            condimentum iaculis. Praesent porta libero nulla, in luctus ipsum
+            lobortis quis. Curabitur et tortor sem. Maecenas vestibulum in
+            tellus vel fringilla. Nullam cursus porttitor urna, ac auctor enim
+            molestie a. Curabitur nec lorem nisl. Vestibulum finibus, odio sit
+            amet venenatis dictum, augue ipsum imperdiet metus, id euismod metus
             nulla et est.
           </p>
         </section>
-        <section className={classes.members}>
-        </section>
+        <section className={classes.members}></section>
       </section>
     </div>
   );

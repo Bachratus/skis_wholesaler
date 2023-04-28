@@ -6,7 +6,7 @@
   max-width: 1560px;
   margin: 0 auto;
   margin-top: 1rem;
-  overflow:auto
+  overflow: auto;
 }
 
 .contact ul {
@@ -18,8 +18,17 @@
   flex-direction: column;
   width: 49%;
   color: white;
+  border-radius: 50px;
+  background-image: url("https://coresites-cdn-adm.imgix.net/mpora_new/wp-content/uploads/2016/07/SkiWords.jpg?fit=crop");
+  background-size: cover;
+  background-position-x: -10rem;
+  filter: brightness(100%);
 }
-
+.card {
+  height: 100%;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
 .contact h1 {
   padding-top: 1rem;
   text-transform: uppercase;
@@ -77,57 +86,60 @@
   margin-top: 1rem;
   justify-content: right;
 }
-.actions p{
+.actions p {
   margin-right: 2rem;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-.actions p span{
+.actions p span {
   color: green;
   font-weight: bold;
   display: block;
   font-size: 1.2rem;
 }
 
-@media (max-width:917px){
-  .container{
+@media (max-width: 917px) {
+  .container {
     align-items: center;
     height: auto;
     flex-direction: column;
   }
-  .ask{
+  .ask {
     margin-top: 2rem;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
   }
-  .ask h1{
+  .ask h1 {
     font-size: 1.7rem;
   }
-  .ask form{
+  .ask form {
     max-height: 480px;
   }
+  .contact {
+    background-position-x: -20rem;
+  }
 }
-@media (max-width:480px){
-  .container{
+@media (max-width: 480px) {
+  .container {
     align-items: center;
     height: auto;
     flex-direction: column;
   }
-  .ask{
+  .ask {
     margin-top: 2rem;
   }
 }
 
-.ask form::-webkit-scrollbar{
+.ask form::-webkit-scrollbar {
   width: 10px;
 }
-.ask form::-webkit-scrollbar-thumb{
+.ask form::-webkit-scrollbar-thumb {
   background-color: #999;
   border-radius: 5px;
 }
 .ask form::-webkit-scrollbar-track-piece:end {
-  margin-bottom: 22px; 
+  margin-bottom: 22px;
 }
 .ask form::-webkit-scrollbar-track-piece:start {
   margin-top: 22px;

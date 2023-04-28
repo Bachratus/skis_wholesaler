@@ -45,7 +45,7 @@ const ContactPage = () => {
     formIsValid = true;
 
   const submitHandler = (event) => {
-    setSent(false)
+    setSent(false);
     event.preventDefault();
     if (!formIsValid) return;
 
@@ -53,37 +53,40 @@ const ContactPage = () => {
     resetSurnameInput();
     resetEmailInput();
     resetQueryInput();
-    setTimeout(()=>{
-      setSent(true)
-    },200)
+    setTimeout(() => {
+      setSent(true);
+    }, 200);
   };
   return (
     <>
       <div className={classes.container}>
         <section className={classes.contact}>
-          <h1>contact us</h1>
-          <section className={classes.open_hours}>
-            <h2>Hours open</h2>
-            <ul>
-              <li>Monday 8:00 - 16:00</li>
-              <li>Tuesday 8:00 - 16:00</li>
-              <li>Wednesday 8:00 - 16:00</li>
-              <li>Thursday 8:00 - 16:00</li>
-              <li>Friday 8:00 - 16:00</li>
-              <li>Saturday 9:00 - 13:00</li>
-              <li>Sunday closed</li>
-            </ul>
-          </section>
-          <section className={classes.data}>
-            <h2>Company data</h2>
-            <span>SKIS POLAND S.A.</span>
-            <span>ul. Magnolii</span>
-            <span>44 - 200 Racibórz</span>
-            <span>info@skrzynka.skispoland.pl</span>
-            <h3>ING Bank Śląski</h3>
-            <span>Account number: 10 1010 1010 1010 1010 1010 1010</span>
-          </section>
+          <div className={classes.card}>
+            <h1>contact us</h1>
+            <section className={classes.open_hours}>
+              <h2>Hours open</h2>
+              <ul>
+                <li>Monday 8:00 - 16:00</li>
+                <li>Tuesday 8:00 - 16:00</li>
+                <li>Wednesday 8:00 - 16:00</li>
+                <li>Thursday 8:00 - 16:00</li>
+                <li>Friday 8:00 - 16:00</li>
+                <li>Saturday 9:00 - 13:00</li>
+                <li>Sunday closed</li>
+              </ul>
+            </section>
+            <section className={classes.data}>
+              <h2>Company data</h2>
+              <span>SKIS POLAND S.A.</span>
+              <span>ul. Magnolii</span>
+              <span>44 - 200 Racibórz</span>
+              <span>info@skrzynka.skispoland.pl</span>
+              <h3>ING Bank Śląski</h3>
+              <span>Account number: 10 1010 1010 1010 1010 1010 1010</span>
+            </section>
+          </div>
         </section>
+
         <section className={classes.ask}>
           <h1>...or just ask us</h1>
           <form onSubmit={submitHandler}>
@@ -121,7 +124,11 @@ const ContactPage = () => {
               warningText="The content must have min. 10 chars"
             />
             <div className={classes.actions}>
-              {sent && <p><span>Sent successfully!</span></p>}
+              {sent && (
+                <p>
+                  <span>Sent successfully!</span>
+                </p>
+              )}
               <Button type="submit" isValid={formIsValid} text="Send" />
             </div>
           </form>
