@@ -7,9 +7,11 @@
     margin: 0 auto;
     height: 8vh;
     min-width: 520px;
+    border-radius: 30px 30px 30px 30px;
 }
 
 .logo{
+    border-radius: 30px 30px 30px 30px;
     width: 25%;
     background-color: rgb(60, 110, 203);
     text-align: center;
@@ -105,7 +107,7 @@
         width: 10%;
     }
   }
-  @media only screen and (max-width:945px){
+  @media only screen and (max-width:1000px){
     .logo a:first-child{
         display:none
     }
