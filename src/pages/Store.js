@@ -7,7 +7,6 @@ import { useState } from "react";
 const StorePage = () => {
   const loadedProductsList = useLoaderData();
   const [productsList, setProductsList] = useState(loadedProductsList)
-  
   return (
     <div className={classes.container}>
       <section className={classes.filters}>
