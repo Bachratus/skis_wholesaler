@@ -66,11 +66,14 @@
   border-radius: 50px;
   width: 49%;
   background-color: rgb(60, 110, 203);
+  background-image: url('https://res.cloudinary.com/simpleview/image/upload/v1633062898/clients/norway/Narvik_NorthernLights_Winter_web_MichelUlriksen_ab972f82-9f02-47d5-b9b6-3ccf64a0aa94.png');
+  background-size: cover;
+  
 }
 .ask form {
   height: 80%;
   margin-top: 2rem;
-  background-color: rgb(228, 228, 235);
+  background-color: rgba(228, 228, 235, 0.816);
   border-radius: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -118,6 +121,9 @@
   }
   .contact {
     background-position-x: -20rem;
+  }
+  .card{
+    padding-bottom: 2rem;
   }
 }
 @media (max-width: 480px) {
