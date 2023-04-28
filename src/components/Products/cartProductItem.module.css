@@ -64,6 +64,10 @@
 .for_whom span:nth-child(3) {
   margin-left: 1rem;
 }
+.for_whom span:nth-child(3){
+  border-bottom:4px dotted white;
+  max-height: 2.6rem;
+}
 .actions {
   width: 40px;
   padding-right: 1rem;

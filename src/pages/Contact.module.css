@@ -77,6 +77,7 @@
   border-radius: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   font-size: 0.8rem;
@@ -134,6 +135,11 @@
   }
   .ask {
     margin-top: 2rem;
+  }
+}
+@media (max-height:800px){
+  .ask form{
+    margin-top: 1rem;
   }
 }
 

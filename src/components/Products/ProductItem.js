@@ -1,4 +1,4 @@
-import classes from "./ProductItem.module.css";
+import defaultClasses from "./ProductItem.module.css";
 import Button from "../UI/Button";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
@@ -7,6 +7,7 @@ import cartClasses from './cartProductItem.module.css'
 
 const ProductItem = (props) => {
   const {id,image, name, price, size, forWhom, quantity } = props.item;
+  const classes = props.cartStyle ? cartClasses: defaultClasses;
 
   const quantityRef=useRef()
   const dispatch = useDispatch()
@@ -23,18 +24,18 @@ const ProductItem = (props) => {
     }))
   }
   return (
-    <li className={props.cartStyle ?  cartClasses.item:classes.item}>
-      <div className={props.cartStyle ?  cartClasses.image:classes.image}>
+    <li className={classes.item}>
+      <div className={classes.image}>
         <img src={image} alt=""></img>
-        <div className={props.cartStyle ?  cartClasses.price:classes.price}>
+        <div className={classes.price}>
           <span>{price}</span>
         </div>
       </div>
-      <div className={props.cartStyle ?  cartClasses.description:classes.description}>
-      <div className={props.cartStyle ?  cartClasses.name:classes.name}>
+      <div className={classes.description}>
+      <div className={classes.name}>
         <span>{name}</span>
         </div>
-        <div className={props.cartStyle ?  cartClasses.for_whom:classes.for_whom}>
+        <div className={classes.for_whom}>
           <span>Size: {size}</span>
           <span>For: {forWhom}</span>
           <span>{props.cartStyle ? 'Qty':'Available'}: {quantity}</span>
@@ -50,7 +51,7 @@ const ProductItem = (props) => {
           <Button isValid={true} text="Add to cart" onClick={addToCartClickHandler}/>
         </div>
       </div>}
-      {props.cartStyle && <div className={cartClasses.actions}>
+      {props.cartStyle && <div className={classes.actions}>
           <button>+</button>
           <button>-</button>
         </div>}

@@ -7,7 +7,7 @@ section.products {
 }
 section.products::-webkit-scrollbar {
   width: 10px;
-  background-color: rgba(0, 0, 0, 0.179);
+  background-color: rgb(255, 255, 255);
 }
 section.products::-webkit-scrollbar-thumb {
   background-color: rgb(60, 110, 203);
