@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { json } from "react-router-dom";
 import classes from "./Logging.module.css";
-import profilePng from "../components/Icons/profilePng.png";
+import profilePng2 from '../components/Icons/profile2.png'
 import useInput from "../hooks/use-input";
 import Input from "../components/UI/Input";
 import Button from "../components/UI/Button";
@@ -56,38 +56,41 @@ const LoggingPage = () => {
   };
   return (
     <>
+      <div className={classes.background}></div>
       <div className={classes.container}>
-        <div className={classes.title}>
-          <p>Sign in</p>
-        </div>
-        <div className={classes.icon}>
-          <div className={classes.iconBackground}>
-            <img src={profilePng} alt="" />
+        <div className={classes.modal}>
+          <div className={classes.title}>
+            <p>Sign in</p>
           </div>
-        </div>
-        <div className={classes.form}>
-          <form onSubmit={submitHandler}>
-            <Input
-              title="Login"
-              isInputValid={isLoginInputValid}
-              changeHandler={loginChangeHandler}
-              enteredValue={enteredLogin}
-              blurHandler={loginInputBlurHandler}
-              warningText="Please enter valid login!"
-            />
-            <Input
-              type="password"
-              title="Password"
-              isInputValid={isPasswordInputValid}
-              changeHandler={passwordChangeHandler}
-              enteredValue={enteredPassword}
-              blurHandler={passwordInputBlurHandler}
-              warningText="Please enter valid password!"
-            />
-            <div className={classes.button}>
-              <Button isValid={formIsValid} type="submit" text="Continue" />
+          <div className={classes.icon}>
+            <div className={classes.iconBackground}>
+              <img src={profilePng2} alt="" />
             </div>
-          </form>
+          </div>
+          <div className={classes.form}>
+            <form onSubmit={submitHandler}>
+              <Input
+                title="Login"
+                isInputValid={isLoginInputValid}
+                changeHandler={loginChangeHandler}
+                enteredValue={enteredLogin}
+                blurHandler={loginInputBlurHandler}
+                warningText="Please enter valid login!"
+              />
+              <Input
+                type="password"
+                title="Password"
+                isInputValid={isPasswordInputValid}
+                changeHandler={passwordChangeHandler}
+                enteredValue={enteredPassword}
+                blurHandler={passwordInputBlurHandler}
+                warningText="Please enter valid password!"
+              />
+              <div className={classes.button}>
+                <Button isValid={formIsValid} type="submit" text="Continue" />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
       {error && <p className={classes.error}>{error.message}</p>}

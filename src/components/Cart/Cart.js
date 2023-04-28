@@ -15,6 +15,7 @@ const Cart = (props) => {
 
   const cartModalContent = (
     <>
+    <h1>Your cart</h1>
       {cartItemsJSX}
       <div className={classes.total}>
         <span>Total price: </span>
