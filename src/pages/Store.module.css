@@ -51,7 +51,7 @@ div.filters {
 }
 
 section.products {
-
+  min-width: 410px;
   flex-grow: 2;
   border: 2px solid black;
   overflow-y: scroll;
@@ -84,8 +84,4 @@ section.products::-webkit-scrollbar-thumb{
 }
 section.products::-webkit-scrollbar-track-piece:start {
   margin-top: calc(4.3rem);
-}
-
-@media (max-width:1260px){
-
 }

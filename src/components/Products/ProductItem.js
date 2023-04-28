@@ -3,6 +3,7 @@ import Button from "../UI/Button";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
+import cartClasses from './cartProductItem.module.css'
 
 const ProductItem = (props) => {
   const {id,image, name, price, size, forWhom, quantity } = props.item;
@@ -22,33 +23,37 @@ const ProductItem = (props) => {
     }))
   }
   return (
-    <li className={classes.item}>
-      <div className={classes.image}>
+    <li className={props.cartStyle ?  cartClasses.item:classes.item}>
+      <div className={props.cartStyle ?  cartClasses.image:classes.image}>
         <img src={image} alt=""></img>
-        <div className={classes.price}>
+        <div className={props.cartStyle ?  cartClasses.price:classes.price}>
           <span>{price}</span>
         </div>
       </div>
-      <div className={classes.description}>
-      <div className={classes.name}>
+      <div className={props.cartStyle ?  cartClasses.description:classes.description}>
+      <div className={props.cartStyle ?  cartClasses.name:classes.name}>
         <span>{name}</span>
         </div>
-        <div className={classes.for_whom}>
+        <div className={props.cartStyle ?  cartClasses.for_whom:classes.for_whom}>
           <span>Size: {size}</span>
           <span>For: {forWhom}</span>
-          <span>Available: {quantity}</span>
+          <span>{props.cartStyle ? 'Qty':'Available'}: {quantity}</span>
         </div>
         </div>
-      <div className={classes.quantity}>
+      {!props.cartStyle && <div className={classes.quantity}>
         <div>
           <input ref={quantityRef} type="number" defaultValue={1} min={1} max={5} />
         </div>
-      </div>
-      <div className={classes.actions}>
+      </div>}
+      {!props.cartStyle && <div className={classes.actions}>
         <div>
           <Button isValid={true} text="Add to cart" onClick={addToCartClickHandler}/>
         </div>
-      </div>
+      </div>}
+      {props.cartStyle && <div className={cartClasses.actions}>
+          <button>+</button>
+          <button>-</button>
+        </div>}
     </li>
   );
 };
