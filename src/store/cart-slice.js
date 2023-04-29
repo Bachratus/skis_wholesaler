@@ -71,6 +71,8 @@ const cartSlice = createSlice({
             return arr;
           }
         const idOfItemToRemove = action.payload.id;
+        const quantityOfRemovedItem = action.payload.quantity;
+        state.totalQuantity -= quantityOfRemovedItem;
         const itemsCopy = [...state.items]
         removeObjectWithId(itemsCopy,idOfItemToRemove)
         state.items = itemsCopy;

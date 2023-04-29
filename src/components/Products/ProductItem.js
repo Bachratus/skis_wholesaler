@@ -49,6 +49,7 @@ const ProductItem = (props) => {
     dispatch(
       cartActions.removeItemFromCartEntirely({
         id: id,
+        quantity:quantity
       })
     );
   }
