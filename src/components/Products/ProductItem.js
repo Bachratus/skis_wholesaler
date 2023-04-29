@@ -20,7 +20,7 @@ const ProductItem = (props) => {
       price:price,
       size:size,
       forWhom:forWhom,
-      quantity: quantityRef.current.value
+      quantity: parseInt(quantityRef.current.value)
     }))
   }
   return (
