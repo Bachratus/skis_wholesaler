@@ -7,7 +7,6 @@ import Textarea from "../UI/Textarea";
 import useInput from "../../hooks/use-input";
 
 const Cart = (props) => {
-
   const {
     enteredValue: enteredName,
     isValueValid: isNameValid, //to form validity
@@ -42,6 +41,7 @@ const Cart = (props) => {
   } = useInput((value) => value.trim().length >= 10);
 
   const cartItems = useSelector((state) => state.cart.items);
+
   const cartItemsJSX = (
     <>
       <section className={classes.products}>

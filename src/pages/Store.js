@@ -100,10 +100,10 @@ export const loader = async () => {
       id: 'p'+key,
       name: data[key].name,
       image: data[key].image,
-      price: data[key].price,
+      price: parseFloat(data[key].price),
       size: data[key].size,
       forWhom: data[key].forWhom,
-      quantity: data[key].quantity
+      quantity: parseInt(data[key].quantity)
     });
   }
   return loadedProducts;
