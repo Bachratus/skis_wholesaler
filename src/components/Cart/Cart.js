@@ -2,7 +2,7 @@ import classes from "./Cart.module.css";
 import Button from "../UI/Button";
 import Products from "../Products/Products";
 import { useSelector } from "react-redux";
-import Input from '../UI/Input'
+import Input from "../UI/Input";
 import Textarea from "../UI/Textarea";
 import useInput from "../../hooks/use-input";
 
@@ -41,6 +41,13 @@ const Cart = (props) => {
   } = useInput((value) => value.trim().length >= 10);
 
   const cartItems = useSelector((state) => state.cart.items);
+  let totalPrice = 0;
+  cartItems.map((item) => {
+    totalPrice += item.price * item.quantity;
+    return {
+      ...item,
+    };
+  });
 
   const cartItemsJSX = (
     <>
@@ -60,45 +67,47 @@ const Cart = (props) => {
         <div className={classes.container}>
           <h1>Your data</h1>
           <section className={classes.form}>
-          <Input
-              title="Name"
-              isInputValid={isNameInputValid}
-              changeHandler={nameChangeHandler}
-              enteredValue={enteredName}
-              blurHandler={nameInputBlurHandler}
-              warningText="Please enter valid name!"
-            />
-            <Input
-              title="Surname"
-              isInputValid={isSurnameInputValid}
-              changeHandler={surnameChangeHandler}
-              enteredValue={enteredSurname}
-              blurHandler={surnameInputBlurHandler}
-              warningText="Please enter valid surname!"
-            />
-            <Input
-              title="Email"
-              isInputValid={isEmailInputValid}
-              changeHandler={emailChangeHandler}
-              enteredValue={enteredEmail}
-              blurHandler={emailInputBlurHandler}
-              warningText="Please enter valid email!"
-            />
-            <Textarea
-              rows={5}
-              title="Adress"
-              isAreaValid={isQueryAreaValid}
-              changeHandler={queryChangeHandler}
-              enteredValue={enteredQuery}
-              blurHandler={queryAreaBlurHandler}
-              warningText="The content must have min. 10 chars"
-            />
+            <form>
+              <Input
+                title="Name"
+                isInputValid={isNameInputValid}
+                changeHandler={nameChangeHandler}
+                enteredValue={enteredName}
+                blurHandler={nameInputBlurHandler}
+                warningText="Please enter valid name!"
+              />
+              <Input
+                title="Surname"
+                isInputValid={isSurnameInputValid}
+                changeHandler={surnameChangeHandler}
+                enteredValue={enteredSurname}
+                blurHandler={surnameInputBlurHandler}
+                warningText="Please enter valid surname!"
+              />
+              <Input
+                title="Email"
+                isInputValid={isEmailInputValid}
+                changeHandler={emailChangeHandler}
+                enteredValue={enteredEmail}
+                blurHandler={emailInputBlurHandler}
+                warningText="Please enter valid email!"
+              />
+              <Textarea
+                rows={5}
+                title="Adress"
+                isAreaValid={isQueryAreaValid}
+                changeHandler={queryChangeHandler}
+                enteredValue={enteredQuery}
+                blurHandler={queryAreaBlurHandler}
+                warningText="The content must have min. 10 chars"
+              />
+            </form>
           </section>
         </div>
       </div>
       <div className={classes.total}>
         <span>Total price: </span>
-        <span>{0}$</span>
+        <span>{totalPrice.toFixed(2)}$</span>
       </div>
       <div className={classes.actions}>
         <Button onClick={props.onClose} isValid={true} text="Close" />
