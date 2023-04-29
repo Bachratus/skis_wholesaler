@@ -83,6 +83,7 @@
   width: 2rem;
   background-color: white;
   color: rgb(141, 141, 162);
+  border: 1px solid white;
   font-weight: bold;
   font-size: 1.3rem;
 }
@@ -90,5 +91,15 @@
   background-color: rgb(141, 141, 162);
   color: white;
   border: 1px solid white;
-  transition: .5s;
+  transition: .2s;
+}
+
+.actions button:nth-child(3){
+  background-color: red;
+  color: white;
+}
+.actions button:nth-child(3):hover{
+  border: 1px solid red;
+  background-color: white;
+  color: red;
 }

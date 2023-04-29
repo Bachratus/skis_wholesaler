@@ -45,6 +45,13 @@ const ProductItem = (props) => {
       })
     );
   };
+  const removeItemFromCartHandler = () =>{
+    dispatch(
+      cartActions.removeItemFromCartEntirely({
+        id: id,
+      })
+    );
+  }
   return (
     <li className={classes.item}>
       <div className={classes.image}>
@@ -93,6 +100,7 @@ const ProductItem = (props) => {
         <div className={classes.actions}>
           <button onClick={increaseQuantityHandler}>+</button>
           <button onClick={decreaseQuantityHandler}>-</button>
+          <button onClick={removeItemFromCartHandler}>x</button>
         </div>
       )}
     </li>

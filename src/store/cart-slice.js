@@ -62,6 +62,19 @@ const cartSlice = createSlice({
       if(itemRemovedEntirely) removeObjectWithId(itemsCopy,idOfItemToRemove)
       state.items = itemsCopy;
     },
+    removeItemFromCartEntirely(state,action){
+        function removeObjectWithId(arr, id) {
+            const objWithIdIndex = arr.findIndex((obj) => obj.id === id);
+            if (objWithIdIndex > -1) {
+              arr.splice(objWithIdIndex, 1);
+            }
+            return arr;
+          }
+        const idOfItemToRemove = action.payload.id;
+        const itemsCopy = [...state.items]
+        removeObjectWithId(itemsCopy,idOfItemToRemove)
+        state.items = itemsCopy;
+    }
   },
 });
 export default cartSlice;
