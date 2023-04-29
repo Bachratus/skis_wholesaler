@@ -1,36 +1,107 @@
-section.products {
-  flex-grow: 2;
+.wrapper {
+  width: 78vw;
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 38vw;
+  height: 50vh;
+}
+.container:nth-child(2) section{
+  font-size: .8rem;
+}
+section.products,
+section.form {
   border: 4px solid black;
   overflow-y: scroll;
-  max-height: 40vh;
-  max-width:38vw;
+  height: 44vh;
 }
-section.products::-webkit-scrollbar {
+section.products::-webkit-scrollbar,
+section.form::-webkit-scrollbar {
   width: 10px;
   background-color: rgb(255, 255, 255);
 }
-section.products::-webkit-scrollbar-thumb {
+section.products::-webkit-scrollbar-thumb,
+section.form::-webkit-scrollbar-thumb {
   background-color: rgb(60, 110, 203);
   border-radius: 5px;
   cursor: pointer;
 }
-.total{
-    text-align: right;
-    margin-right: 5rem;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-.actions{
-    text-align: right;
-    padding-top: 1rem;
-    padding-right: 5rem;
-}
-.actions button:nth-child(1){
-    margin-right: 1rem;
+
+section.form {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 5rem;
 }
 
-@media (max-width:1120px){
-    section.products {
-        max-width:80vw;
-      }
-};
+.total {
+  text-align: right;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.actions {
+  text-align: right;
+  padding-top: 1rem;
+  padding-right: 1rem;
+}
+.actions button:nth-child(1) {
+  margin-right: 1rem;
+}
+
+@media (max-width: 1240px) {
+  .container:nth-child(1) {
+    width: 48vw;
+    max-width: 48vw;
+  }
+  .container:nth-child(2) {
+    width: 30vw;
+    max-width: 30vw;
+  }
+}
+@media (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    width: 76.5vw;
+    height: 60vh;
+    overflow-y: scroll;
+  }
+  .wrapper::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(255, 255, 255);
+  }
+  .wrapper::-webkit-scrollbar-thumb {
+    background-color: rgb(60, 110, 203);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .container:nth-child(1){
+    height: 80vh;
+    width: 70vw;
+    max-width: 70vw;
+  }
+  .container:nth-child(2){
+    height: 80vh;
+    width: 70vw;
+    max-width: 70vw;
+    margin-top: 1rem;
+  }
+}
+@media (max-height: 800px){
+  .actions button{
+    height: 3rem;
+  }
+  .total{
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 1024px) and (max-height:660px){
+  .wrapper{
+    height: 50vh;
+  }
+}
