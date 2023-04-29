@@ -10,7 +10,8 @@ const cartSlice = createSlice({
     addItemToCart(state, action) {
       const newItem = action.payload;
       state.totalQuantity = state.totalQuantity + newItem.quantity;
-      const identicalItemExist = state.items.filter((item) => item.id === newItem.id).length !== 0;
+      const identicalItemExist =
+        state.items.filter((item) => item.id === newItem.id).length !== 0;
       const itemsCopy = [...state.items];
       if (identicalItemExist) {
         itemsCopy.map((item) => {
@@ -26,11 +27,40 @@ const cartSlice = createSlice({
           }
         });
         state.items = itemsCopy;
-      }
-      else{
+      } else {
         state.items.push(newItem);
       }
-      console.log(newItem);
+    },
+    removeItemFromCart(state, action) {
+      function removeObjectWithId(arr, id) {
+        const objWithIdIndex = arr.findIndex((obj) => obj.id === id);
+        if (objWithIdIndex > -1) {
+          arr.splice(objWithIdIndex, 1);
+        }
+        return arr;
+      }
+      let itemRemovedEntirely = false;
+
+      const idOfItemToRemove = action.payload.id;
+      state.totalQuantity = state.totalQuantity - 1;  
+      const itemsCopy = [...state.items];
+      itemsCopy.map((item) => {
+        if (item.id === idOfItemToRemove) {
+          if (item.quantity === 1) {
+            itemRemovedEntirely = true;
+          }
+          return {
+            ...item,
+            quantity: (item.quantity -= 1),
+          };
+        } else {
+          return {
+            ...item,
+          };
+        }
+      });
+      if(itemRemovedEntirely) removeObjectWithId(itemsCopy,idOfItemToRemove)
+      state.items = itemsCopy;
     },
   },
 });
