@@ -10,27 +10,22 @@ const cartSlice = createSlice({
     addItemToCart(state, action) {
       const newItem = action.payload;
 
-      let existingIdenticalItemQuantity =
+      let existingIdenticalItem =
         state.items.filter((item) => item.id === newItem.id).length !== 0
-          ? state.items.filter((item) => item.id === newItem.id)[0].quantity
+          ? state.items.filter((item) => item.id === newItem.id)[0]
           : null;
-      let existingIdenticalItemMaxQuantity =
-        state.items.filter((item) => item.id === newItem.id).length !== 0
-          ? state.items.filter((item) => item.id === newItem.id)[0].maxQuantity
-          : null;
-      if (existingIdenticalItemMaxQuantity) {
+      if (existingIdenticalItem) {
         if (
-          existingIdenticalItemQuantity + newItem.quantity >
-          existingIdenticalItemMaxQuantity
+          existingIdenticalItem.quantity + newItem.quantity >
+          existingIdenticalItem.maxQuantity
         )
           return;
       }
 
       state.totalQuantity = state.totalQuantity + newItem.quantity;
-      const identicalItemExist =
-        state.items.filter((item) => item.id === newItem.id).length !== 0;
+
       const itemsCopy = [...state.items];
-      if (identicalItemExist) {
+      if (existingIdenticalItem != null) {
         itemsCopy.map((item) => {
           if (item.id === newItem.id) {
             return {
