@@ -9,6 +9,23 @@ const cartSlice = createSlice({
   reducers: {
     addItemToCart(state, action) {
       const newItem = action.payload;
+
+      let existingIdenticalItemQuantity =
+        state.items.filter((item) => item.id === newItem.id).length !== 0
+          ? state.items.filter((item) => item.id === newItem.id)[0].quantity
+          : null;
+      let existingIdenticalItemMaxQuantity =
+        state.items.filter((item) => item.id === newItem.id).length !== 0
+          ? state.items.filter((item) => item.id === newItem.id)[0].maxQuantity
+          : null;
+      if (existingIdenticalItemMaxQuantity) {
+        if (
+          existingIdenticalItemQuantity + newItem.quantity >
+          existingIdenticalItemMaxQuantity
+        )
+          return;
+      }
+
       state.totalQuantity = state.totalQuantity + newItem.quantity;
       const identicalItemExist =
         state.items.filter((item) => item.id === newItem.id).length !== 0;

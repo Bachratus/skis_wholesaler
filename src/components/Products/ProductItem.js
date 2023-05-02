@@ -22,6 +22,7 @@ const ProductItem = (props) => {
         size: size,
         forWhom: forWhom,
         quantity: parseInt(quantityRef.current.value),
+        maxQuantity: quantity
       })
     );
   };
