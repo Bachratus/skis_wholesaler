@@ -3,6 +3,7 @@
   height: 50vh;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .container {
   display: flex;
@@ -11,8 +12,8 @@
   width: 38vw;
   height: 50vh;
 }
-.container:nth-child(2) section{
-  font-size: .8rem;
+.container:nth-child(2) section {
+  font-size: 0.8rem;
 }
 section.products,
 section.form {
@@ -54,6 +55,19 @@ section.form {
   margin-right: 1rem;
 }
 
+.sent {
+  position: absolute;
+  width: 100%;
+  height: 6rem;
+  top: calc(50% - 3rem);
+  padding-top: 1.5rem;
+  text-align: center;
+  background-color: rgba(0, 128, 0, 0.787);
+  color: white;
+  font-size: 2rem;
+  animation: float 2000ms ease-in;
+}
+
 @media (max-width: 1240px) {
   .container:nth-child(1) {
     width: 48vw;
@@ -80,28 +94,43 @@ section.form {
     border-radius: 5px;
     cursor: pointer;
   }
-  .container:nth-child(1){
+  .container:nth-child(1) {
     height: 80vh;
     width: 70vw;
     max-width: 70vw;
   }
-  .container:nth-child(2){
+  .container:nth-child(2) {
     height: 80vh;
     width: 70vw;
     max-width: 70vw;
     margin-top: 1rem;
   }
 }
-@media (max-height: 800px){
-  .actions button{
+@media (max-height: 800px) {
+  .actions button {
     height: 3rem;
   }
-  .total{
+  .total {
     font-size: 1.2rem;
   }
 }
-@media (max-width: 1024px) and (max-height:660px){
-  .wrapper{
+@media (max-width: 1024px) and (max-height: 660px) {
+  .wrapper {
     height: 50vh;
+  }
+}
+
+@keyframes float {
+  0% {
+    filter: opacity(0);
+  }
+  10% {
+    filter: opacity(1);
+  }
+  40% {
+    filter: opacity(1);
+  }
+  100% {
+    filter: opacity(0);
   }
 }

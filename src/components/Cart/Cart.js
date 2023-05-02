@@ -1,12 +1,17 @@
 import classes from "./Cart.module.css";
 import Button from "../UI/Button";
 import Products from "../Products/Products";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Input from "../UI/Input";
 import Textarea from "../UI/Textarea";
 import useInput from "../../hooks/use-input";
+import { cartActions } from "../../store/cart-slice";
+import { useState } from "react";
 
 const Cart = (props) => {
+  const dispatch = useDispatch();
+  const [ordered, setOrdered] = useState(false);
+
   const {
     enteredValue: enteredName,
     isValueValid: isNameValid, //to form validity
@@ -32,12 +37,12 @@ const Cart = (props) => {
     resetInput: resetEmailInput,
   } = useInput((value) => value.trim().includes("@"));
   const {
-    enteredValue: enteredQuery,
-    isValueValid: isQueryValid, //to form validity
-    isInputValid: isQueryAreaValid,
-    onChangeHandler: queryChangeHandler,
-    onBlurHandler: queryAreaBlurHandler,
-    resetInput: resetQueryInput,
+    enteredValue: enteredAddress,
+    isValueValid: isAddressValid, //to form validity
+    isInputValid: isAddressAreaValid,
+    onChangeHandler: addressChangeHandler,
+    onBlurHandler: addressAreaBlurHandler,
+    resetInput: resetAddressInput,
   } = useInput((value) => value.trim().length >= 10);
 
   const cartItems = useSelector((state) => state.cart.items);
@@ -48,7 +53,6 @@ const Cart = (props) => {
       ...item,
     };
   });
-
   const cartItemsJSX = (
     <>
       <section className={classes.products}>
@@ -56,6 +60,27 @@ const Cart = (props) => {
       </section>
     </>
   );
+
+  let cartIsValid =
+    isNameValid &&
+    isSurnameValid &&
+    isEmailValid &&
+    isAddressValid &&
+    cartItems.length > 0;
+
+  const orderClickHandler = () => {
+    if (!cartIsValid) return;
+    console.log("send");
+    dispatch(cartActions.resetCart());
+    resetNameInput();
+    resetSurnameInput();
+    resetEmailInput();
+    resetAddressInput();
+    setOrdered(true);
+    setTimeout(() => {
+      setOrdered(false);
+    }, 2000);
+  };
 
   const cartModalContent = (
     <>
@@ -95,15 +120,18 @@ const Cart = (props) => {
               <Textarea
                 rows={5}
                 title="Adress"
-                isAreaValid={isQueryAreaValid}
-                changeHandler={queryChangeHandler}
-                enteredValue={enteredQuery}
-                blurHandler={queryAreaBlurHandler}
+                isAreaValid={isAddressAreaValid}
+                changeHandler={addressChangeHandler}
+                enteredValue={enteredAddress}
+                blurHandler={addressAreaBlurHandler}
                 warningText="The content must have min. 10 chars"
               />
             </form>
           </section>
         </div>
+        {ordered && <h1 className={classes.sent}>
+          <span>You have successfully placed an order!</span>
+        </h1>}
       </div>
       <div className={classes.total}>
         <span>Total price: </span>
@@ -111,7 +139,11 @@ const Cart = (props) => {
       </div>
       <div className={classes.actions}>
         <Button onClick={props.onClose} isValid={true} text="Close" />
-        <Button onClick={props.onClose} isValid={true} text="Order" />
+        <Button
+          onClick={orderClickHandler}
+          isValid={cartIsValid}
+          text="Order"
+        />
       </div>
     </>
   );
