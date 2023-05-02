@@ -56,10 +56,11 @@ section.form {
 }
 
 .sent {
-  position: absolute;
-  width: 100%;
+  position: fixed;
+  width: 80vw;
   height: 6rem;
-  top: calc(50% - 3rem);
+  top: calc(50% - 15vh);
+  left: calc(50% - 40vw);
   padding-top: 1.5rem;
   text-align: center;
   background-color: rgba(0, 128, 0, 0.787);
@@ -112,6 +113,28 @@ section.form {
   }
   .total {
     font-size: 1.2rem;
+  }
+  
+}
+@media (max-width:800px){
+  .sent{
+    font-size: 1.4rem;
+    padding-top: 2rem;
+  }
+}
+@media (max-width:560px){
+  .sent{
+    font-size: 1.1rem;
+    padding-top: 2.2rem;
+  }
+}
+@media (max-width:401px){
+  .sent{
+    font-size: .9rem;
+    padding-top: 2.3rem;
+  }
+  .actions button {
+    width: 5rem;
   }
 }
 @media (max-width: 1024px) and (max-height: 660px) {
