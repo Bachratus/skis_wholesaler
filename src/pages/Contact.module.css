@@ -24,26 +24,34 @@
   background-position-x: -10rem;
   filter: brightness(100%);
 }
+
 .card {
   height: 100%;
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.25);
 }
+
+.contactData{
+  overflow: auto;
+  height: calc(85vh - 100px);
+}
+
 .contact h1 {
+  height: 80px;
   padding-top: 1rem;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
 .contact h2 {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .open_hours {
   text-align: center;
 }
-.contact .data {
+.data {
   text-align: center;
 }
 .contact span {
@@ -56,7 +64,6 @@
 .ask {
   max-width: 560px;
   min-width: 340px;
-  min-height: 600px;
   color: white;
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -66,9 +73,8 @@
   border-radius: 50px;
   width: 49%;
   background-color: rgb(60, 110, 203);
-  background-image: url('https://res.cloudinary.com/simpleview/image/upload/v1633062898/clients/norway/Narvik_NorthernLights_Winter_web_MichelUlriksen_ab972f82-9f02-47d5-b9b6-3ccf64a0aa94.png');
+  background-image: url("https://res.cloudinary.com/simpleview/image/upload/v1633062898/clients/norway/Narvik_NorthernLights_Winter_web_MichelUlriksen_ab972f82-9f02-47d5-b9b6-3ccf64a0aa94.png");
   background-size: cover;
-  
 }
 .ask form {
   height: 80%;
@@ -123,7 +129,7 @@
   .contact {
     background-position-x: -20rem;
   }
-  .card{
+  .card {
     padding-bottom: 2rem;
   }
 }
@@ -137,10 +143,24 @@
     margin-top: 2rem;
   }
 }
-@media (max-height:800px){
-  .ask form{
+@media (max-height: 800px) {
+  .ask form {
     margin-top: 1rem;
   }
+}
+
+.contactData::-webkit-scrollbar {
+  width: 10px;
+}
+.contactData::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 5px;
+}
+.contactData::-webkit-scrollbar-track-piece:end {
+  margin-bottom: 50px;
+}
+.contactData::-webkit-scrollbar-track-piece:start {
+  margin-top: 22px;
 }
 
 .ask form::-webkit-scrollbar {
