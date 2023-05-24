@@ -21,7 +21,8 @@
   border-radius: 50px;
   background-image: url("https://coresites-cdn-adm.imgix.net/mpora_new/wp-content/uploads/2016/07/SkiWords.jpg?fit=crop");
   background-size: cover;
-  background-position-x: -10rem;
+  background-repeat: no-repeat;
+  background-position-x: center;
   filter: brightness(100%);
 }
 
@@ -70,15 +71,22 @@
   padding-top: 1rem;
   padding-left: 3rem;
   padding-right: 3rem;
+  padding-bottom: 20px;
   border-radius: 50px;
   width: 49%;
   background-color: rgb(60, 110, 203);
   background-image: url("https://res.cloudinary.com/simpleview/image/upload/v1633062898/clients/norway/Narvik_NorthernLights_Winter_web_MichelUlriksen_ab972f82-9f02-47d5-b9b6-3ccf64a0aa94.png");
   background-size: cover;
 }
+
+.ask h1{
+  height: 60px;
+  font-size: 2.5rem;
+}
+
 .ask form {
-  height: 80%;
-  margin-top: 2rem;
+  height: calc(85vh - 115px);
+  margin-top: 1rem;
   background-color: rgba(228, 228, 235, 0.816);
   border-radius: 2rem;
   padding-left: 1rem;
@@ -126,9 +134,6 @@
   .ask form {
     max-height: 480px;
   }
-  .contact {
-    background-position-x: -20rem;
-  }
   .card {
     padding-bottom: 2rem;
   }
@@ -157,7 +162,7 @@
   border-radius: 5px;
 }
 .contactData::-webkit-scrollbar-track-piece:end {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 .contactData::-webkit-scrollbar-track-piece:start {
   margin-top: 22px;
