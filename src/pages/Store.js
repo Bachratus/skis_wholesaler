@@ -6,7 +6,6 @@ import { useState } from "react";
 
 const StorePage = () => {
   const loadedProductsList = useLoaderData();
-  const [productsList, setProductsList] = useState(loadedProductsList)
   return (
     <div className={classes.container}>
       <section className={classes.filters}>
@@ -82,7 +81,7 @@ const StorePage = () => {
       </section>
       <section className={classes.products}>
         <header>Products:</header>
-        <Products skisList={productsList} />
+        <Products skisList={loadedProductsList} />
       </section>
     </div>
   );
