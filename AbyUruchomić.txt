@@ -1,0 +1,4 @@
+1. Należy posiadać zainstalowany node.js 
+2. Uruchomić w terminalu projektu:
+	npm install --save styled-components react-router-dom @reduxjs/toolkit react-redux
+	npm start
